@@ -1,8 +1,11 @@
+'use client';
+
 import { useRef } from 'react';
-import { cn } from '@components/utils';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const logos = ['/UOACSLogo.svg'];
+import { cn } from '@/libs/utils';
+
+const logos = ['/assets/images/UOACSLogo.svg'];
 
 export const FooterLogos = ({ className }: { className?: string }) => {
   const container = useRef<HTMLDivElement>(null);

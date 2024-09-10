@@ -1,6 +1,7 @@
 import { type ButtonHTMLAttributes } from 'react';
-import { cn } from '@components/utils';
 import { motion, type Transition } from 'framer-motion';
+
+import { cn } from '@/libs/utils';
 
 interface GlowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   containerClassName?: string;

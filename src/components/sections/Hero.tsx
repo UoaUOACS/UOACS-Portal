@@ -1,11 +1,11 @@
 'use client';
 
-import { cn } from '@components/utils';
 import { m } from 'framer-motion';
 
-import AnimatedText from '../home/AnimatedText';
+import { cn } from '@/libs/utils';
 import GlowButton from '../home/GlowButton';
 import HeroBlur from '../home/HeroBlur';
+import AnimatedText from '../team/AnimatedText';
 
 const textVariant = {
   initial: {

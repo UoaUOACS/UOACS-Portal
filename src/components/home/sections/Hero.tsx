@@ -1,7 +1,7 @@
-import { cn } from '@components/utils';
 import { motion } from 'framer-motion';
 
-import AnimatedText from '../AnimatedText';
+import { cn } from '@/libs/utils';
+import AnimatedText from '../../team/AnimatedText';
 import GlowButton from '../GlowButton';
 import HeroBlur from '../HeroBlur';
 
@@ -26,10 +26,7 @@ interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const Hero = ({ ...props }: HeroProps) => {
   return (
-    <div
-      {...props}
-      className={cn('relative flex min-h-max w-dvw justify-center xl:w-desktop', props.className)}
-    >
+    <div {...props} className={cn('relative flex min-h-max w-dvw justify-center xl:w-desktop', props.className)}>
       <HeroBlur />
       <motion.div className="flex w-dvw flex-col items-center whitespace-nowrap rounded-lg p-4 pt-3">
         <div

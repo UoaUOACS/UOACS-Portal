@@ -1,4 +1,4 @@
-import { cn } from '@components/utils';
+import { cn } from '@/libs/utils';
 
 interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon: string;

@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { motion, useInView, type Transition, type Variants } from 'framer-motion';
 
-import { cn } from '../utils';
+import { cn } from '../../libs/utils';
 
 type AnimatedTextProps = {
   className?: string;
