@@ -22,4 +22,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployed on cloudflare
 
-Check out our website by clicking [here ( uoacs.something )](uoacs-portal-8cm.pages.dev) :)
+Check out our website by clicking [here ( uoacs )](uoacs-portal-8cm.pages.dev) :)

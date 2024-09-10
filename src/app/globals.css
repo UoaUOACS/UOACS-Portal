@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.geist-sans {
+  font-family: var(--font-geist-sans);
+}
