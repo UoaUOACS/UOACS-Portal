@@ -3,6 +3,8 @@ import localFont from 'next/font/local';
 
 import './globals.css';
 
+import { ReactLenis, useLenis } from '../libs/react-lenis';
+
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',
@@ -36,7 +38,7 @@ const HelveticaNowDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'UOACS',
+  title: 'uoacs',
   description: 'University of Auckland Computer Science Society',
 };
 
@@ -48,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${HelveticaNowDisplay.className} antialiased`}>
-        {children}
+        <ReactLenis root>{children}</ReactLenis>
       </body>
     </html>
   );
