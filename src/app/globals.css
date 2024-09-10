@@ -7,7 +7,6 @@ body,
 #root {
   padding: 0;
   margin: 0;
-  font-family: 'Helvetica Now Display Thin';
 }
 
 html {
@@ -15,7 +14,7 @@ html {
   --foreground: 209, 40%, 86%; /* hsl(209, 40%, 86%)*/
   --background: 240, 14%, 3%; /*hsl(2240, 14%, 3%)*/
 
-  font-family: 'Helvetica Now Display Thin';
+  font-family: var(--font-helvetica-now-display);
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   overflow-x: hidden;
