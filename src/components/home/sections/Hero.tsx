@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion';
-import HeroBlur from '../HeroBlur';
-import GlowButton from '../GlowButton';
-import AnimatedText from '../AnimatedText';
 import { cn } from '@components/utils';
+import { motion } from 'framer-motion';
+
+import AnimatedText from '../AnimatedText';
+import GlowButton from '../GlowButton';
+import HeroBlur from '../HeroBlur';
 
 const textVariant = {
   initial: {
@@ -27,10 +28,7 @@ export const Hero = ({ ...props }: HeroProps) => {
   return (
     <div
       {...props}
-      className={cn(
-        'relative flex min-h-[max-content] w-dvw justify-center xl:w-desktop',
-        props.className
-      )}
+      className={cn('relative flex min-h-[max-content] w-dvw justify-center xl:w-desktop', props.className)}
     >
       <HeroBlur />
       <motion.div className="flex w-dvw flex-col items-center whitespace-nowrap rounded-lg p-4 pt-3">
@@ -39,9 +37,7 @@ export const Hero = ({ ...props }: HeroProps) => {
             'figtree flex flex-col items-center justify-center gap-24 font-medium sm:flex-row sm:gap-12 sm:text-left lg:gap-24'
           }
         >
-          <div
-            className={cn('flex flex-col text-7xl font-bold text-blue-600 sm:text-7xl xl:text-8xl')}
-          >
+          <div className={cn('flex flex-col text-7xl font-bold text-blue-600 sm:text-7xl xl:text-8xl')}>
             {HEROTEXT.map(
               (text, i, arr) => {
                 arr[i];
@@ -79,7 +75,6 @@ export const Hero = ({ ...props }: HeroProps) => {
               link="https://forms.gle/CZncuuHDTY1Vz2eP7"
               containerClassName="w-full sm:w-[min-content]"
             />
-           
           </div>
         </div>
       </motion.div>

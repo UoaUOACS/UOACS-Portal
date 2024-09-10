@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
-import { m } from 'framer-motion';
-import HeroBlur from '../home/HeroBlur';
-import GlowButton from '../home/GlowButton';
-import AnimatedText from '../home/AnimatedText';
 import { cn } from '@components/utils';
+import { m } from 'framer-motion';
+
+import AnimatedText from '../home/AnimatedText';
+import GlowButton from '../home/GlowButton';
+import HeroBlur from '../home/HeroBlur';
 
 const textVariant = {
   initial: {
@@ -29,10 +30,7 @@ export const Hero = ({ ...props }: HeroProps) => {
   return (
     <div
       {...props}
-      className={cn(
-        'relative flex min-h-[max-content] w-dvw justify-center xl:w-desktop',
-        props.className
-      )}
+      className={cn('relative flex min-h-[max-content] w-dvw justify-center xl:w-desktop', props.className)}
     >
       <HeroBlur />
       <m.div className="flex w-dvw flex-col items-center whitespace-nowrap rounded-lg p-4 pt-3">
@@ -41,9 +39,7 @@ export const Hero = ({ ...props }: HeroProps) => {
             'figtree flex flex-col items-center justify-center gap-24 font-medium sm:flex-row sm:gap-12 sm:text-left lg:gap-24'
           }
         >
-          <div
-            className={cn('flex flex-col text-7xl font-bold text-blue-600 sm:text-7xl xl:text-8xl')}
-          >
+          <div className={cn('flex flex-col text-7xl font-bold text-blue-600 sm:text-7xl xl:text-8xl')}>
             {HEROTEXT.map(
               (text, i, arr) => {
                 arr[i];

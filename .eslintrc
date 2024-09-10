@@ -1,9 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier", "plugin:@typescript-eslint/recommended"],
   "plugins": ["tailwindcss"],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "warn",
     "tailwindcss/no-custom-classname": "off",
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
@@ -17,7 +18,7 @@
       }
     ]
   },
-   "settings": {
+  "settings": {
     "tailwindcss": {
       "callees": ["cn", "twMerge", "twJoin", "clsx"],
       "config": "tailwind.config.js"

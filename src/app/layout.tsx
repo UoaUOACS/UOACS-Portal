@@ -1,24 +1,30 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+
+import './globals.css';
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
 });
 
 const HelveticaNowDisplay = localFont({
-  variable: "--font-helvetica-now-display",
+  variable: '--font-helvetica-now-display',
   src: [
     {
-      path: './fonts/HelveticaNowDisplay-Medium.woff2',
+      path: './fonts/HelveticaNowDisplay-Regular.woff2',
       weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/HelveticaNowDisplay-Medium.woff2',
+      weight: '500',
       style: 'normal',
     },
     {
@@ -30,8 +36,8 @@ const HelveticaNowDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "UOACS",
-  description: "University of Auckland Computer Science Society",
+  title: 'UOACS',
+  description: 'University of Auckland Computer Science Society',
 };
 
 export default function RootLayout({
@@ -41,7 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${HelveticaNowDisplay.className} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${HelveticaNowDisplay.className} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

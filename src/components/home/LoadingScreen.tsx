@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { motion } from 'framer-motion';
 import { useLayoutEffect } from 'react';
+import { motion } from 'framer-motion';
 
 interface FakeLoadingScreenProps {
   off?: boolean;
@@ -13,8 +13,8 @@ const bgVariant = {
 };
 
 const logoVariant = {
-  initial: { scale: 2.5, top: '50%', translateY: '-50%', filter: 'blur(300px)' },
-  animate: { scale: 1, top: '32px', translateY: '0%', filter: 'blur(0px)' },
+  initial: { scale: 2.5, top: '50%', translate: '-50% -50%', filter: 'blur(300px)' },
+  animate: { scale: 1, top: '16px', left: '32px', translate: '0% 0%', filter: 'blur(0px)' },
 };
 
 export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
@@ -29,10 +29,11 @@ export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
     document.getElementById('root')?.classList.remove('h-dvh');
     document.getElementById('root')?.classList.remove('overflow-hidden');
   };
+
   return (
     <>
       <motion.div
-        className="pointer-events-none absolute z-[999] flex h-dvh w-dvw justify-center bg-black"
+        className="pointer-events-nones absolute z-[999] flex h-dvh w-dvw justify-center bg-black"
         initial={off ? 'animate' : 'initial'}
         animate="animate"
         variants={bgVariant}
@@ -41,7 +42,7 @@ export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
       >
         <motion.img
           src="assets/images/UOACSLogo.svg"
-          className="absolute top-[50%] w-[150px]"
+          className="absolute top-[50%] left-[50%] h-[70px]"
           variants={logoVariant}
           transition={{
             duration: 0.5,
