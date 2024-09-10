@@ -28,7 +28,7 @@ export const Hero = ({ ...props }: HeroProps) => {
   return (
     <div
       {...props}
-      className={cn('relative flex min-h-[max-content] w-dvw justify-center xl:w-desktop', props.className)}
+      className={cn('relative flex min-h-max w-dvw justify-center xl:w-desktop', props.className)}
     >
       <HeroBlur />
       <motion.div className="flex w-dvw flex-col items-center whitespace-nowrap rounded-lg p-4 pt-3">

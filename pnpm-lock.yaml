@@ -11,11 +11,8 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      eslint-plugin-tailwindcss:
-        specifier: ^3.17.4
-        version: 3.17.4(tailwindcss@3.4.10)
       framer-motion:
-        specifier: ^11.3.17
+        specifier: ^11.5.4
         version: 11.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lenis:
         specifier: ^1.1.9
@@ -58,7 +55,7 @@ importers:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.45)
       eslint:
-        specifier: ^8
+        specifier: ^8.57.0
         version: 8.57.0
       eslint-config-next:
         specifier: 14.2.9
@@ -66,6 +63,9 @@ importers:
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
+      eslint-plugin-tailwindcss:
+        specifier: ^3.17.4
+        version: 3.17.4(tailwindcss@3.4.10)
       postcss:
         specifier: ^8.4.45
         version: 8.4.45

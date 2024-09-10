@@ -33,7 +33,7 @@ export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
   return (
     <>
       <motion.div
-        className="pointer-events-nones absolute z-[999] flex h-dvh w-dvw justify-center bg-black"
+        className="pointer-events-none absolute z-[999] flex h-dvh w-dvw justify-center bg-black"
         initial={off ? 'animate' : 'initial'}
         animate="animate"
         variants={bgVariant}
