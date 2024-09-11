@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <>
-      <IconLoadingScreen />
+      <IconLoadingScreen off />
       <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-hidden px-8">
         {/* navigation */}
         <Navigation />
@@ -68,25 +68,34 @@ const ConnectSection = () => {
         University life can be daunting at times and we hope to serve as the catalyst between lifelong friendships. We
         do this through our mix of social, industry, educational and competitive events.
       </div>
-      <div className="w-3/4 max-w-[1200px] overflow-hidden mt-8">
-        <motion.div
-          className="h-[240px] flex gap-8"
-          initial={{ translateX: '0%' }}
-          animate={{ translateX: '-100%' }}
-          transition={{ duration: 12, ease: 'linear', repeat: Infinity }}
-        >
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-          <div className="bg-white min-w-[240px] h-full"></div>
-        </motion.div>
+      <div className="w-3/4 max-w-[1200px] mt-8 h-[300px] relative overflow-hidden">
+        <Carousel
+          Items={
+            <>
+              <img src="assets/images/launchnight/LN_0.png" />
+              <img src="assets/images/launchnight/LN_4.png" />
+              <img src="assets/images/launchnight/LN_8.png" />
+              <img src="assets/images/launchnight/LN_10.png" />
+              <img src="assets/images/launchnight/LN_13.png" />
+            </>
+          }
+        />
       </div>
     </div>
+  );
+};
+
+const Carousel = ({ Items }: { Items: React.ReactNode }) => {
+  return (
+    <motion.div
+      className="flex absolute w-max gap-4 pr-4 *:h-[240px] "
+      initial={{ translateX: '0%' }}
+      animate={{ translateX: '-50%' }}
+      transition={{ duration: 16, ease: 'linear', repeat: Infinity }}
+    >
+      {Items}
+      {Items}
+    </motion.div>
   );
 };
 
@@ -94,7 +103,7 @@ const CollaborateSection = () => {
   return (
     <div className="pb-24 px-8 flex flex-col place-items-center" id="collaborate">
       <motion.h1
-        className="text-8xl w-min self-end"
+        className="text-8xl self-end"
         initial={{ translateX: '100%' }}
         whileInView={{ translateX: '0%' }}
         transition={{ duration: 1, ease: 'easeInOut' }}
