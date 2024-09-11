@@ -55,3 +55,7 @@ html {
 .dottedmask {
   mask-image: url('../assets/images/dotted.svg');
 }
+
+.grainy {
+  background-image: url('../assets/images/grainy.png');
+}
