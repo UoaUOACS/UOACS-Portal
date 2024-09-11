@@ -51,3 +51,7 @@ html {
 .geist-sans {
   font-family: var(--font-geist-sans);
 }
+
+.dottedmask {
+  mask-image: url('../assets/images/dotted.svg');
+}

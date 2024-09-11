@@ -1,80 +1,50 @@
+'use client';
+
 import { motion } from 'framer-motion';
+import { Blocks, Cable, Merge, Network } from 'lucide-react';
 
 import { cn } from '@/libs/utils';
-import AnimatedText from '../../team/AnimatedText';
-import GlowButton from '../GlowButton';
 import HeroBlur from '../HeroBlur';
-
-const textVariant = {
-  initial: {
-    y: -20,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-  },
-};
-
-const textTansition = { duration: 0.25, ease: 'easeInOut' };
-
-const HEROSTAGGER = 0.05;
-const HEROTEXT = ['Connect,', 'Collaborate,', 'Network,', 'Develop'];
-const HERODELAY = HEROTEXT.map((text) => text.length * HEROSTAGGER + 0.2);
 
 interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const Hero = ({ ...props }: HeroProps) => {
+export const HeroSection = ({ ...props }: HeroProps) => {
   return (
-    <div {...props} className={cn('relative flex min-h-max w-dvw justify-center xl:w-desktop', props.className)}>
+    <div {...props} className={cn('mt-12 min-h-[400px] w-full grid place-items-center', props.className)}>
       <HeroBlur />
-      <motion.div className="flex w-dvw flex-col items-center whitespace-nowrap rounded-lg p-4 pt-3">
-        <div
-          className={
-            'figtree flex flex-col items-center justify-center gap-24 font-medium sm:flex-row sm:gap-12 sm:text-left lg:gap-24'
-          }
-        >
-          <div className={cn('flex flex-col text-7xl font-bold text-blue-600 sm:text-7xl xl:text-8xl')}>
-            {HEROTEXT.map(
-              (text, i, arr) => {
-                arr[i];
-                return (
-                  <AnimatedText
-                    key={i}
-                    type="letters"
-                    text={text}
-                    TextVariants={textVariant}
-                    transition={textTansition}
-                    staggerChildren={HEROSTAGGER}
-                    delayChild={HERODELAY.slice(0, i).reduce((acc, val) => acc + val, 1.5)}
-                  />
-                );
-              },
-              { acc: 0 }
-            )}
-
-            <div className="mt-2 flex text-xl font-thin text-white">
-              <AnimatedText
-                text="University of Auckland Compsci Society"
-                type="letters"
-                TextVariants={{
-                  initial: { visibility: 'hidden' },
-                  animate: { visibility: 'visible' },
-                }}
-                delayChild={4}
-              />
-            </div>
-          </div>
-          <div className="flex w-full flex-col gap-4">
-            <GlowButton
-              label="Join UOACS 📝"
-              className="w-full grow bg-black/80 font-thin [backdrop-filter:blur(20px)] sm:w-[min-content] sm:px-24"
-              link="https://forms.gle/CZncuuHDTY1Vz2eP7"
-              containerClassName="w-full sm:w-[min-content]"
-            />
-          </div>
-        </div>
-      </motion.div>
+      <div className="flex flex-col items-center">
+        <h3 className="text-3xl sm:text-5xl font-bold w-[400px] sm:w-[600px] flex-wrap flex justify-center">
+          <p className="text-blue-400">University of Auckland</p>
+          Computer Science Society
+        </h3>
+        <hr className="border-foreground w-4/6 mt-4" />
+        <h3 className="text-xl text-center mt-6 font-bold *:flex gap-2 *:gap-2 *:items-center flex items-center">
+          <LocalNavigation>
+            Connect
+            <Cable />
+          </LocalNavigation>
+          <LocalNavigation>
+            Collaborate
+            <Merge />
+          </LocalNavigation>
+          <LocalNavigation>
+            Network
+            <Network />
+          </LocalNavigation>
+          <LocalNavigation>
+            Develop
+            <Blocks />
+          </LocalNavigation>
+        </h3>
+      </div>
     </div>
+  );
+};
+
+const LocalNavigation = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <button className="text-xl border px-4 p-2 rounded-full hover:text-secondary hover:border-secondary">
+      {children}
+    </button>
   );
 };
