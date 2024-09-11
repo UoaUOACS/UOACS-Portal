@@ -28,7 +28,7 @@ export default function SponsorsPage() {
             <h3 className="text-3xl font-bold mb-4">Silver Sponsors</h3>
             <img
               src="assets/svg/sponsors/JaneStreetLogo.svg"
-              className="w-[350px] max-h-[250px] hover:saturate-150 hover:brightness-150 p-8 bg-[radial-gradient(#000C,#0008,#fff0,#fff0)] transition-all"
+              className="w-[350px] max-h-[250px] hover:saturate-150 hover:brightness-150 p-8 bg-[radial-gradient(hsl(var(--background),1),hsl(var(--background),0.4),#fff0,#fff0)] transition-all"
             />
           </div>
         </motion.div>
