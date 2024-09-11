@@ -26,7 +26,7 @@ export default function TeamPage() {
               <ExecProfile name="Zach Taylor" roleid={3} />
               <ExecProfile name="Jenny Lu" roleid={4} />
               <ExecProfile name="Chanasit Jitsawatpaiboon" roleid={4} />
-              <ExecProfile name="Koutaro yumiba" roleid={4} />
+              <ExecProfile name="Koutaro Yumiba" roleid={4} />
             </div>
             <div className="flex gap-8 mt-8">
               <ExecProfile name="Sanskriti Roy" roleid={5} />

@@ -1,18 +1,19 @@
 'use client';
 
+import { useRef } from 'react';
 import Link from 'next/link';
 import { FooterNavigation } from '@components/home/FooterNavigation';
 import { FakeLoadingScreen } from '@components/home/LoadingScreen';
 import { HeroSection } from '@components/home/sections/Hero';
 import { Navigation } from '@components/home/sections/Navigation';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll, useTransform, Variants } from 'framer-motion';
 
 import { navigation } from '@/data/navigation';
 
 export default function Home() {
   return (
     <>
-      <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-x-hidden px-8">
+      <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-hidden px-8">
         <FakeLoadingScreen off />
         {/* navigation */}
         <Navigation />
@@ -25,6 +26,7 @@ export default function Home() {
       <CollaborateSection />
       <NetworkSection />
       <DevelopSection />
+      <JoinUs />
       {/* Footer */}
       <FooterNavigation />
     </>
@@ -70,7 +72,7 @@ const ConnectSection = () => {
         University life can be daunting at times and we hope to serve as the catalyst between lifelong friendships. We
         do this through our mix of social, industry, educational and competitive events.
       </div>
-      <div className="w-3/4 overflow-hidden mt-8">
+      <div className="w-3/4 max-w-[1200px] overflow-hidden mt-8">
         <motion.div
           className="h-[240px] flex gap-8"
           initial={{ translateX: '0%' }}
@@ -104,6 +106,16 @@ const CollaborateSection = () => {
         Collaborate
       </motion.h1>
       <hr className=" border-foreground w-2/5 self-end" />
+      <div className="flex">
+        <p className="mt-12 max-w-screen-sm text-center text-lg">
+          Our degree can be quite challenging at times and we believe that as a society, we have an obligation to do our
+          best to help out one another. Whilst maintaining academic integrity and abiding by UOA’s rules, we collaborate
+          with one another to achieve better results and ultimately, a better education. We firmly believe in the{' '}
+          <span className="text-2xl">
+            phrase: <strong className="font-bold text-secondary">Iron sharpens iron.</strong>
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
@@ -120,6 +132,16 @@ const NetworkSection = () => {
         Network
       </motion.h1>
       <hr className=" border-foreground w-2/5 self-start" />
+      <div className="flex">
+        <p className="mt-12 max-w-screen-sm text-center text-lg">
+          Most people in the industry would agree that the phrase,{' '}
+          <span className="text-secondary font-bold">“Your network is your net worth”</span>, rings true. We also align
+          ourselves with this phrase and we hope to cultivate an environment where people can expand their network and
+          create opportunities for their futures. Whether this is with the faculty, industry or even just with one
+          another.
+        </p>
+        <img src="" alt="" />
+      </div>
     </div>
   );
 };
@@ -136,7 +158,27 @@ const DevelopSection = () => {
         Develop
       </motion.h1>
       <hr className=" border-foreground w-2/5 self-end" />
+      <p className="mt-12 max-w-screen-sm text-center text-lg">
+        Another core element of being a Computer Science student is the technical skills that we acquire throughout our
+        degree. As a club, we aspire to be a source of help that can fill in the gaps that lectures and labs might
+        leave. Our executive team also has a specific division dedicated for the development of our peers through
+        competitive activities like hackathons and consulting case cracks.
+      </p>
     </div>
+  );
+};
+
+const JoinUs = () => {
+  return (
+    <a
+      className="pb-24 flex flex-col place-items-center relative py-24"
+      id="Join us"
+      href="https://forms.gle/kiLbz2N5WiqjxLoJ8"
+    >
+      <p className="text-9xl select-none font-bold w-dvw text-center absolute inset-0 hover:text-secondary hover:bg-white grid duration-200 transition-colors place-items-center">
+        Join Us!
+      </p>
+    </a>
   );
 };
 
