@@ -12,18 +12,20 @@ import { navigation } from '@/data/navigation';
 export default function Home() {
   return (
     <>
-      <div className="max-w-dvw relative flex min-h-dvh flex-col items-center overflow-x-hidden px-8">
+      <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-x-hidden px-8">
         <FakeLoadingScreen off />
         {/* navigation */}
         <Navigation />
         {/* Header Hero - Section 1 */}
         <HeroSection />
         <AboutUs />
-        {/* Connect - Section 2 */}
       </div>
-      {/* Footer */}
+      {/*Sections*/}
       <ConnectSection />
       <CollaborateSection />
+      <NetworkSection />
+      <DevelopSection />
+      {/* Footer */}
       <FooterNavigation />
     </>
   );
@@ -94,14 +96,46 @@ const CollaborateSection = () => {
   return (
     <div className="pb-24 px-8 flex flex-col place-items-center" id="collaborate">
       <motion.h1
-        className="text-8xl w-min self-start"
-        initial={{ translateX: '-100%' }}
+        className="text-8xl w-min self-end"
+        initial={{ translateX: '100%' }}
         whileInView={{ translateX: '0%' }}
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
         Collaborate
       </motion.h1>
+      <hr className=" border-foreground w-2/5 self-end" />
+    </div>
+  );
+};
+
+const NetworkSection = () => {
+  return (
+    <div className="pb-24 px-8 flex flex-col place-items-center" id="network">
+      <motion.h1
+        className="text-8xl w-min self-start"
+        initial={{ translateX: '-100%' }}
+        whileInView={{ translateX: '0%' }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+      >
+        Network
+      </motion.h1>
       <hr className=" border-foreground w-2/5 self-start" />
+    </div>
+  );
+};
+
+const DevelopSection = () => {
+  return (
+    <div className="pb-24 px-8 flex flex-col place-items-center" id="develop">
+      <motion.h1
+        className="text-8xl w-min self-end"
+        initial={{ translateX: '100%' }}
+        whileInView={{ translateX: '0%' }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+      >
+        Develop
+      </motion.h1>
+      <hr className=" border-foreground w-2/5 self-end" />
     </div>
   );
 };
