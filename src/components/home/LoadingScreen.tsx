@@ -22,10 +22,12 @@ export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
   // i hope i don't need this in the future :smile:
   const lenis = useLenis();
   useLayoutEffect(() => {
-    lenis?.scrollTo(0, {
-      immediate: true,
-    });
-    lenis?.stop();
+    if (!off) {
+      lenis?.scrollTo(0, {
+        immediate: true,
+      });
+      lenis?.stop();
+    }
   });
   const enableScroll = () => {
     lenis?.start();

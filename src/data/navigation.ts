@@ -10,4 +10,3 @@ export const navigation: NavigationProps[] = [
   { href: 'https://linktr.ee/UOACS', label: 'Socials' },
   { href: '/sponsors', label: 'Sponsors' },
 ];
-('');
