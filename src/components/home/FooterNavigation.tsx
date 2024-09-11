@@ -27,7 +27,7 @@ export const FooterNavigation = ({ className, children }: { className?: string; 
             if (href === pathname) return;
             return (
               <Link
-                className="bg-white p-1 px-4 hover:text-secondary border-slate-300 border-2 hover:border-secondary rounded-full text-background"
+                className="bg-white p-1 px-4 hover:text-secondary border-slate-300 border-2 hover:border-secondary rounded-full text-background transition-colors"
                 key={i}
                 href={href}
               >

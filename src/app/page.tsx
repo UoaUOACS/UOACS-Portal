@@ -1,19 +1,15 @@
 'use client';
 
-import { useRef } from 'react';
-import Link from 'next/link';
 import { FooterNavigation } from '@components/home/FooterNavigation';
-import { FakeLoadingScreen } from '@components/home/LoadingScreen';
+import { IconLoadingScreen } from '@components/home/LoadingScreen';
 import { HeroSection } from '@components/home/sections/Hero';
 import { Navigation } from '@components/home/sections/Navigation';
-import { AnimatePresence, motion, useMotionValueEvent, useScroll, useTransform, Variants } from 'framer-motion';
-
-import { navigation } from '@/data/navigation';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
     <>
-      <FakeLoadingScreen />
+      <IconLoadingScreen />
       <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-hidden px-8">
         {/* navigation */}
         <Navigation />
