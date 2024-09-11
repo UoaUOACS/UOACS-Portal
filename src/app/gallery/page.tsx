@@ -34,7 +34,7 @@ export default function GalleryPage() {
               <GalleryImageContent numberOfImages={14} path="assets/images/esportnight2024/ESPN_" />
             </div>
           </div>
-          <p className="text-4xl self-start min-w-[220px] text-center">now</p>
+          <p className="text-4xl self-start min-w-[220px] text-center text-secondary">now</p>
         </motion.div>
       </div>
       <FooterNavigation />
@@ -45,10 +45,8 @@ export default function GalleryPage() {
 const GalleryImageHeader = ({ Title, description }: { Title: string; description?: string }) => {
   return (
     <>
-      <div className="flex  w-full justify-center h-full items-center whitespace-nowrap">
-        <hr className="w-full" />
+      <div className="flex w-full text-blue-400 justify-center h-full items-center whitespace-nowrap">
         <h3 className="text-3xl font-bold px-2">{Title}</h3>
-        <hr className="w-full" />
       </div>
       {description && <p className="text-center w-2/3">{description}</p>}
     </>
