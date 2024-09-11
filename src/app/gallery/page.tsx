@@ -30,7 +30,7 @@ export default function GalleryPage() {
         satisfied in every way."
               />
               <GalleryImageContent numberOfImages={20} path="assets/images/launchnight/LN_" />
-              <GalleryImageHeader Title="Esport Night" />
+              <GalleryImageHeader Title="UOACS x AUEC Valorant Tournament" />
               <GalleryImageContent numberOfImages={14} path="assets/images/esportnight2024/ESPN_" />
             </div>
           </div>
