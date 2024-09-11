@@ -23,9 +23,6 @@ export default function GalleryPage() {
             <div className="flex gap-4 flex-wrap">
               <div className="h-[200px] bg-white aspect-square"></div>
               <div className="h-[200px] bg-white aspect-square"></div>
-              <div className="h-[200px] bg-white aspect-square"></div>
-              <div className="h-[200px] bg-white aspect-square"></div>
-              <div className="h-[200px] bg-white aspect-square"></div>
             </div>
           </div>
           <p className="text-4xl self-start min-w-[220px] text-center">now</p>
