@@ -17,18 +17,16 @@ const logoVariant = {
   initial: { scale: 2.5, top: '50%', translate: '-50% -50%', filter: 'blur(300px)' },
   animate: { scale: 1, top: '16px', left: '32px', translate: '0% 0%', filter: 'blur(0px)' },
 };
-let played = false;
 
 export const IconLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
   // i hope i don't need this in the future :smile:
   const lenis = useLenis();
   useLayoutEffect(() => {
-    if (!off && !played) {
+    if (!off) {
       lenis?.scrollTo(0, {
         immediate: true,
       });
       lenis?.stop();
-      played = true;
     }
   });
   const enableScroll = () => {

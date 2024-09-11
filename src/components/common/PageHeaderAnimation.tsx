@@ -2,17 +2,13 @@ import { useLayoutEffect } from 'react';
 import { useLenis } from '@studio-freight/react-lenis';
 import { motion } from 'framer-motion';
 
-let played = false;
 const OtherPageHeader = ({ label }: { label: string }) => {
   const lenis = useLenis();
   useLayoutEffect(() => {
-    if (!played) {
-      lenis?.scrollTo(0, {
-        immediate: true,
-      });
-      lenis?.stop();
-      played = true;
-    }
+    lenis?.scrollTo(0, {
+      immediate: true,
+    });
+    lenis?.stop();
   });
   const enableScroll = () => {
     lenis?.start();
