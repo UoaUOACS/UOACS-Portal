@@ -22,10 +22,16 @@ export default function GalleryPage() {
               <div className="w-[1px] h-full bg-foreground" />
             </div>
             <div className="flex flex-col gap-4 items-center w-full">
-              <GalleryImageHeader Title="Launch Night" />
-              <GalleryImageContent numberOfImages={20} path="/assets/images/launchnight/LN_" />
+              <GalleryImageHeader
+                Title="Launch Night"
+                description="We held our very first event in the short history of UOACS and it was a stellar success! With 90+
+        attendees and 25+ new sign ups, our event was filled to the brim with energetic and expectant computer science
+        students. It was a night of introduction and social activities accompanied with free food that left everyone
+        satisfied in every way."
+              />
+              <GalleryImageContent numberOfImages={20} path="assets/images/launchnight/LN_" />
               <GalleryImageHeader Title="Esport Night" />
-              <GalleryImageContent numberOfImages={14} path="/assets/images/esportnight2024/ESPN_" />
+              <GalleryImageContent numberOfImages={14} path="assets/images/esportnight2024/ESPN_" />
             </div>
           </div>
           <p className="text-4xl self-start min-w-[220px] text-center">now</p>
@@ -36,19 +42,22 @@ export default function GalleryPage() {
   );
 }
 
-const GalleryImageHeader = ({ Title }: { Title: string }) => {
+const GalleryImageHeader = ({ Title, description }: { Title: string; description?: string }) => {
   return (
-    <div className="flex  w-full justify-center h-full items-center whitespace-nowrap">
-      <hr className="w-full" />
-      <h3 className="text-3xl font-bold px-2">{Title}</h3>
-      <hr className="w-full" />
-    </div>
+    <>
+      <div className="flex  w-full justify-center h-full items-center whitespace-nowrap">
+        <hr className="w-full" />
+        <h3 className="text-3xl font-bold px-2">{Title}</h3>
+        <hr className="w-full" />
+      </div>
+      {description && <p className="text-center w-2/3">{description}</p>}
+    </>
   );
 };
 
 const GalleryImageContent = ({ numberOfImages, path }: { numberOfImages: number; path: string }) => {
   return (
-    <div className="flex gap-4 flex-wrap *:h-[200px] justify-center">
+    <div className="flex gap-4 flex-wrap *:h-[200px] justify-center mb-8">
       {new Array(numberOfImages).fill('').map((_, i) => {
         return <img src={`${path}${i}.png`} />;
       })}
