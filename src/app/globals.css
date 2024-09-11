@@ -53,7 +53,7 @@ html {
 }
 
 .dottedmask {
-  mask-image: url('../assets/images/dotted.svg');
+  mask-image: url('../assets/svg/dotted.svg');
 }
 
 .grainy {
