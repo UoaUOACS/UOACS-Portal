@@ -17,7 +17,7 @@ export const GalleryImageContent = ({ numberOfImages, path }: galleryImageProps)
   return (
     <div className="flex gap-4 flex-wrap *:h-[200px] justify-center mb-8">
       {new Array(numberOfImages).fill('').map((_, i) => {
-        return <img src={`${path}${i}.png`} />;
+        return <img src={`${path}${i}.png`} key={i} />;
       })}
     </div>
   );
