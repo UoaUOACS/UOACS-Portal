@@ -1,6 +1,8 @@
 import { useLayoutEffect } from 'react';
+import Link from 'next/link';
 import { useLenis } from '@studio-freight/react-lenis';
 import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
 
 const OtherPageHeader = ({ label }: { label: string }) => {
   const lenis = useLenis();
@@ -30,6 +32,10 @@ const OtherPageHeader = ({ label }: { label: string }) => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
+        <Link href="/" className="absolute group flex gap-4 top-4 text-xl left-4 items-center">
+          <ArrowLeft className=" group-hover:stroke-secondary" />
+          <span className="group-hover:text-secondary">home</span>
+        </Link>
         <motion.hr
           initial={{ width: 0 }}
           animate={{ width: '100%' }}
