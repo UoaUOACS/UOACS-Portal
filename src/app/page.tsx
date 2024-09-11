@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { FooterNavigation } from '@components/home/FooterNavigation';
 import { FakeLoadingScreen } from '@components/home/LoadingScreen';
-import { FooterLogos } from '@components/home/LogosFooter';
 import { HeroSection } from '@components/home/sections/Hero';
 import { Navigation } from '@components/home/sections/Navigation';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -24,15 +24,7 @@ export default function Home() {
       {/* Footer */}
       <ConnectSection />
       <CollaborateSection />
-      <FooterLogos>
-        <div className="flex gap-2">
-          {navigation.map(({ href, label }, i) => (
-            <Link className="bg-white p-1 px-4 rounded-full text-background" key={i} href={href}>
-              <p>{label}</p>
-            </Link>
-          ))}
-        </div>
-      </FooterLogos>
+      <FooterNavigation />
     </>
   );
 }
@@ -60,7 +52,7 @@ const AboutUs = () => {
 
 const ConnectSection = () => {
   return (
-    <div className=" pb-24 px-8 flex flex-col place-items-center">
+    <div className=" pb-24 px-8 flex flex-col place-items-center" id="connect">
       <motion.h1
         className="text-8xl w-min self-start"
         initial={{ translateX: '-100%' }}
@@ -100,7 +92,7 @@ const ConnectSection = () => {
 
 const CollaborateSection = () => {
   return (
-    <div className=" pb-24 px-8 flex flex-col place-items-center">
+    <div className="pb-24 px-8 flex flex-col place-items-center" id="collaborate">
       <motion.h1
         className="text-8xl w-min self-start"
         initial={{ translateX: '-100%' }}

@@ -1,3 +1,11 @@
+'use client';
+
+import OtherPageHeader from '@components/common/PageHeaderAnimation';
+
 export default function TeamPage() {
-  return <div className="grid min-h-dvh place-items-center">team page</div>;
+  return (
+    <div className="flex flex-col min-h-dvh items-center px-2">
+      <OtherPageHeader label="Meet our execs" />
+    </div>
+  );
 }

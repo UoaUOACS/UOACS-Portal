@@ -1,18 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, type Variants } from 'framer-motion';
 
 import { navigation } from '@/data/navigation';
 
 export const Navigation = () => {
+  const pathname = usePathname();
   return (
     <nav className="h-[70px] my-4 w-full flex items-center justify-between gap-4 text-lg text-white">
       <div className="w-16" />
       <div className="gap-4 flex">
-        {navigation.map(({ href, label }) => (
-          <NavigationLink href={href} label={label} key={href} />
-        ))}
+        {navigation.map(({ href, label }) => {
+          if (href === pathname) return;
+          return <NavigationLink href={href} label={label} key={href} />;
+        })}
       </div>
       <motion.a
         whileHover={{ scale: 1.1 }}
