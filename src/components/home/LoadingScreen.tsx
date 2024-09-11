@@ -37,7 +37,7 @@ export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
         initial={off ? 'animate' : 'initial'}
         animate="animate"
         variants={bgVariant}
-        transition={{ duration: 0.5, delay: 1.5 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
         onAnimationComplete={enableScroll}
       >
         <motion.img
@@ -46,9 +46,9 @@ export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
           variants={logoVariant}
           transition={{
             duration: 0.5,
-            delay: 1.2,
+            delay: 1,
             ease: 'easeInOut',
-            filter: { delay: 0.3, duration: 0.75 },
+            filter: { delay: 0, duration: 0.75 },
           }}
         />
       </motion.div>
