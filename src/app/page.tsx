@@ -37,6 +37,10 @@ export default function Home() {
             We realized that other practices had their own societies and associations while we were struggling to find
             like minded individuals. So we did what no one else was doing, and created this club.
           </AboutUsItem>
+          <AboutUsItem>
+            The core foundations of what we do and who we are are the following: <br />
+            <strong className="text-secondary">Connect, collaborate, network and develop.</strong>
+          </AboutUsItem>
         </div>
       </div>
       <FooterLogos>
@@ -54,7 +58,7 @@ export default function Home() {
 
 const AboutUsItem = ({ label, children }: { label?: string | React.ReactNode; children: React.ReactNode }) => {
   return (
-    <div>
+    <div className="w-full">
       <strong className="flex whitespace-nowrap gap-2 items-center">
         {label} <hr className=" w-full border-foreground opacity-40 my-2" />
       </strong>

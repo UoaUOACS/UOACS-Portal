@@ -14,12 +14,13 @@ export const Navigation = () => {
           <NavigationLink href={href} label={label} key={href} />
         ))}
       </div>
-      <motion.button
+      <motion.a
         whileHover={{ scale: 1.1 }}
+        href="https://forms.gle/kiLbz2N5WiqjxLoJ8"
         className="bg-white text-black p-2 px-8 rounded-full whitespace-nowrap select-none cursor-pointer"
       >
         Join us!
-      </motion.button>
+      </motion.a>
     </nav>
   );
 };
