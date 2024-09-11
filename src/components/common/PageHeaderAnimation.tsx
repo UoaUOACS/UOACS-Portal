@@ -1,6 +1,18 @@
+import { useLayoutEffect } from 'react';
+import { useLenis } from '@studio-freight/react-lenis';
 import { motion } from 'framer-motion';
 
 const OtherPageHeader = ({ label }: { label: string }) => {
+  const lenis = useLenis();
+  useLayoutEffect(() => {
+    lenis?.scrollTo(0, {
+      immediate: true,
+    });
+    lenis?.stop();
+  });
+  const enableScroll = () => {
+    lenis?.start();
+  };
   return (
     <>
       <motion.div
@@ -8,6 +20,7 @@ const OtherPageHeader = ({ label }: { label: string }) => {
         initial={{ scale: 2, top: '50%' }}
         animate={{ scale: 1, top: 0 }}
         transition={{ duration: 0.5, delay: 0.5, ease: 'easeInOut' }}
+        onAnimationComplete={enableScroll}
       >
         <p>{label}</p>
       </motion.div>

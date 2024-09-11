@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useLenis } from '@studio-freight/react-lenis';
 import { Blocks, Cable, Merge, Network } from 'lucide-react';
 
 import { cn } from '@/libs/utils';
@@ -9,6 +9,16 @@ import HeroBlur from '../HeroBlur';
 interface HeroProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const HeroSection = ({ ...props }: HeroProps) => {
+  const lenis = useLenis();
+
+  type targetProps = string | number | HTMLElement;
+  const handleScrollTo = (target: targetProps) => {
+    lenis?.scrollTo(target, {
+      immediate: false,
+      duration: 1.5,
+    });
+  };
+
   return (
     <div {...props} className={cn('mt-12 min-h-[400px] w-full grid place-items-center', props.className)}>
       <HeroBlur />
@@ -19,19 +29,19 @@ export const HeroSection = ({ ...props }: HeroProps) => {
         </h3>
         <hr className="border-foreground w-4/6 mt-4" />
         <h3 className="text-xl text-center mt-6 font-bold *:flex gap-2 *:gap-2 *:items-center flex items-center">
-          <LocalNavigation>
+          <LocalNavigation OnClick={() => handleScrollTo('#connect')}>
             Connect
             <Cable />
           </LocalNavigation>
-          <LocalNavigation>
+          <LocalNavigation OnClick={() => handleScrollTo('#collaborate')}>
             Collaborate
             <Merge />
           </LocalNavigation>
-          <LocalNavigation>
+          <LocalNavigation OnClick={() => handleScrollTo('#network')}>
             Network
             <Network />
           </LocalNavigation>
-          <LocalNavigation>
+          <LocalNavigation OnClick={() => handleScrollTo('#develop')}>
             Develop
             <Blocks />
           </LocalNavigation>
@@ -41,9 +51,12 @@ export const HeroSection = ({ ...props }: HeroProps) => {
   );
 };
 
-const LocalNavigation = ({ children }: { children: React.ReactNode }) => {
+const LocalNavigation = ({ children, OnClick }: { children: React.ReactNode; OnClick: () => void }) => {
   return (
-    <button className="text-xl border px-4 p-2 rounded-full hover:text-secondary hover:border-secondary">
+    <button
+      onClick={OnClick}
+      className="text-xl hover:text-secondary hover:bg-white border px-4 p-2 rounded-full transition-colors"
+    >
       {children}
     </button>
   );

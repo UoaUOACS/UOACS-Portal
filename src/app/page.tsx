@@ -13,8 +13,8 @@ import { navigation } from '@/data/navigation';
 export default function Home() {
   return (
     <>
+      <FakeLoadingScreen />
       <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-hidden px-8">
-        <FakeLoadingScreen off />
         {/* navigation */}
         <Navigation />
         {/* Header Hero - Section 1 */}
@@ -170,15 +170,14 @@ const DevelopSection = () => {
 
 const JoinUs = () => {
   return (
-    <a
-      className="pb-24 flex flex-col place-items-center relative py-24"
-      id="Join us"
-      href="https://forms.gle/kiLbz2N5WiqjxLoJ8"
-    >
-      <p className="text-9xl select-none font-bold w-dvw text-center absolute inset-0 hover:text-secondary hover:bg-white grid duration-200 transition-colors place-items-center">
-        Join Us!
-      </p>
-    </a>
+    <div className="pb-24 flex flex-col place-items-center relative py-24" id="Join us">
+      <a
+        href="https://forms.gle/kiLbz2N5WiqjxLoJ8"
+        className="text-5xl  select-none font-bold px-20 border rounded-full p-12 text-center hover:text-secondary hover:bg-white grid duration-200 transition-colors place-items-center"
+      >
+        Join Us for 2024!
+      </a>
+    </div>
   );
 };
 

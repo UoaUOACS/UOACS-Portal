@@ -59,3 +59,9 @@ html {
 .grainy {
   background-image: url('../assets/images/grainy.png');
 }
+
+.lock {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}

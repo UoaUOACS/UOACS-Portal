@@ -1,6 +1,7 @@
 'use client';
 
 import { useLayoutEffect } from 'react';
+import { useLenis } from '@studio-freight/react-lenis';
 import { motion } from 'framer-motion';
 
 interface FakeLoadingScreenProps {
@@ -19,17 +20,16 @@ const logoVariant = {
 
 export const FakeLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
   // i hope i don't need this in the future :smile:
+  const lenis = useLenis();
   useLayoutEffect(() => {
-    if (!off) {
-      document.getElementById('root')?.classList.add('h-dvh');
-      document.getElementById('root')?.classList.add('overflow-hidden');
-    }
+    lenis?.scrollTo(0, {
+      immediate: true,
+    });
+    lenis?.stop();
   });
   const enableScroll = () => {
-    document.getElementById('root')?.classList.remove('h-dvh');
-    document.getElementById('root')?.classList.remove('overflow-hidden');
+    lenis?.start();
   };
-
   return (
     <>
       <motion.div
