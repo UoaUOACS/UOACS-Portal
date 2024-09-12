@@ -103,11 +103,11 @@ const CollaborateSection = () => {
           <p>
             Our degree can be quite challenging at times and we believe that as a society, we have an obligation to do
             our best to help out one another. Whilst maintaining academic integrity and abiding by UOA’s rules, we
-            collaborate with one another to achieve better results and ultimately, a better education. We firmly believe
-            in the
+            collaborate with one another to achieve better results and ultimately, a better education.
           </p>
-          <p className="text-2xl m-4">
-            phrase: <strong className="font-bold text-secondary">Iron sharpens iron.</strong>
+          <p className="m-4">
+            We firmly believe in the phrase: <br />
+            <strong className="font-bold text-2xl text-secondary">Iron sharpens iron.</strong>
           </p>
         </div>
       </div>

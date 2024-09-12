@@ -11,11 +11,11 @@ body,
 
 html {
   --white: 0, 0%, 100%; /*hsl(0, 0%, 100%)*/
-  
+
   --foreground: 209, 40%, 86%; /* hsl(209, 40%, 86%)*/
   --background: 218, 30%, 12%; /*hsl(218, 30%, 12%)*/
   --secondary: 23, 85%, 55%; /*hsl(23, 85%, 55%)*/
-  
+
   --excPresident: var(--secondary);
   --excVicePresident: var(--secondary);
   --excTresurer: var(--secondary);

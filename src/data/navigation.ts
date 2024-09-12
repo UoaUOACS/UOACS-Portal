@@ -4,7 +4,7 @@ export type NavigationProps = {
 };
 
 export const navigation: NavigationProps[] = [
-  { href: '/', label: 'home' },
+  { href: '/', label: 'Home' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/team', label: 'Meet the Team' },
   { href: 'https://linktr.ee/UOACS', label: 'Socials' },

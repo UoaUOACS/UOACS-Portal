@@ -19,26 +19,26 @@ export default function TeamPage() {
             <h3 className="text-3xl font-bold">UOACS 2024 Executives</h3>
             <div className="flex gap-8 mt-8">
               <ExecProfile image="assets/images/execs/exec1.png" name="Joshua Li" roleid={0} />
-              <ExecProfile image="assets/images/execs/exec1.png" name="Chris Chiem" roleid={1} />
-              <ExecProfile image="assets/images/execs/exec1.png" name="Ben MacSweeney" roleid={2} />
+              <ExecProfile image="assets/images/execs/exec2.png" name="Chris Chiem" roleid={1} />
+              <ExecProfile image="assets/images/execs/exec3.png" name="Ben MacSweeney" roleid={2} />
             </div>
             <div className="flex gap-8 mt-8">
-              <ExecProfile name="Zach Taylor" roleid={3} />
-              <ExecProfile name="Jenny Lu" roleid={4} />
-              <ExecProfile name="Chanasit Jitsawatpaiboon" roleid={4} />
-              <ExecProfile name="Koutaro Yumiba" roleid={4} />
+              <ExecProfile image="assets/images/execs/exec4.png" name="Zach Taylor" roleid={3} />
+              <ExecProfile image="assets/images/execs/exec5.png" name="Jenny Lu" roleid={4} />
+              <ExecProfile image="assets/images/execs/exec6.png" name="Chanasit Jitsawatpaiboon" roleid={4} />
+              <ExecProfile image="assets/images/execs/exec7.jpg" name="Koutaro Yumiba" roleid={4} />
             </div>
             <div className="flex gap-8 mt-8">
-              <ExecProfile name="Sanskriti Roy" roleid={5} />
-              <ExecProfile name="Dhiren Patel" roleid={6} />
-              <ExecProfile name="Sooji Noh" roleid={6} />
-              <ExecProfile name="Casey Ryan" roleid={6} />
+              <ExecProfile image="assets/images/execs/exec8.png" name="Sanskriti Roy" roleid={5} />
+              <ExecProfile image="assets/images/execs/exec9.png" name="Dhiren Patel" roleid={6} />
+              <ExecProfile image="assets/images/execs/exec10.png" name="Sooji Noh" roleid={6} />
+              <ExecProfile image="assets/images/execs/exec11.jpg" name="Casey Ryan" roleid={6} />
             </div>
             <div className="flex gap-8 mt-8">
-              <ExecProfile name="Jed Gannaban" roleid={7} />
-              <ExecProfile name="Josh Lin" roleid={8} />
-              <ExecProfile name="Narin Lane" roleid={8} />
-              <ExecProfile name="Satoi Miyamoto" roleid={8} />
+              <ExecProfile image="assets/images/execs/exec12.png" name="Jed Gannaban" roleid={7} />
+              <ExecProfile image="assets/images/execs/exec13.png" name="Josh Lin" roleid={8} />
+              <ExecProfile image="assets/images/execs/exec14.png" name="Narin Lane" roleid={8} />
+              <ExecProfile image="assets/images/execs/exec15.jpg" name="Satoi Miyamoto" roleid={8} />
             </div>
           </div>
         </motion.div>
@@ -73,7 +73,7 @@ const ExecProfile = ({ name, roleid, image, links }: ExecType) => {
   return (
     <div className="w-32 flex flex-col items-center">
       <img
-        src=""
+        src={image}
         className="bg-white size-32 rounded-full border-4"
         style={{ borderColor: `hsl(var(--${roles[roleid].rolecolor}),0.5)` }}
       />
