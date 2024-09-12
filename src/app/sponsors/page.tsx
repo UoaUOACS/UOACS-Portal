@@ -22,7 +22,7 @@ export default function SponsorsPage() {
             <h3 className="text-3xl font-bold mb-4">Silver Sponsors</h3>
             <img
               src="assets/svg/sponsors/JaneStreetLogo.svg"
-              className="min-w-[350px] max-h-[250px] max-w-[400px] hover:saturate-150 hover:brightness-150 p-8 bg-[radial-gradient(hsl(var(--background),1),hsl(var(--background),0.4),#fff0,#fff0)] transition-all"
+              className="min-w-[250px] max-h-[250px] max-w-[400px] hover:saturate-150 hover:brightness-150 p-8 bg-[radial-gradient(hsl(var(--background),1),hsl(var(--background),0.4),#fff0,#fff0)] transition-all"
               alt="Silver sponsor, Jane Street Logo"
             />
           </div>
@@ -33,7 +33,7 @@ export default function SponsorsPage() {
   );
 }
 
-export const Grainy = () => {
+const Grainy = () => {
   return (
     <div className="dottedmask brightness-200 pointer-events-none grid place-items-center absolute size-full inset-0 -z-10">
       <motion.div style={{ maskImage: 'radial-gradient(#fff,#fff, #fff0,#fff0)' }} className="size-2/3">
