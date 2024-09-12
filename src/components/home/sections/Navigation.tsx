@@ -3,7 +3,7 @@
 import { createContext, useContext, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, type Variants } from 'framer-motion';
+import { AnimatePresence, motion, type Variants } from 'framer-motion';
 import { Ellipsis, X } from 'lucide-react';
 
 import { navigation } from '@/data/navigation';
@@ -88,10 +88,21 @@ const SheetMenu = ({ children }: { children: React.ReactNode }) => {
   };
   return (
     <MenuContext.Provider value={{ handleToggleMenu }}>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className=" size-full bg-black/40 fixed z-[9998] select-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleToggleMenu}
+          />
+        )}
+      </AnimatePresence>
       <motion.div
         className="fixed h-dvh w-dvw top-0 p-8 select-none bg-background z-[9999] "
         initial={{ right: '-120%' }}
-        animate={{ right: open ? '0%' : '-120%' }}
+        animate={{ right: open ? '-20%' : '-120%' }}
       >
         <button onClick={handleToggleMenu}>
           <X fill="#FFF" className="size-16" />

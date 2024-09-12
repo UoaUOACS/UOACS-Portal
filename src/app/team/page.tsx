@@ -73,7 +73,7 @@ const ExecProfile = ({ name, roleid, image, links }: ExecType) => {
   return (
     <div className="w-32 flex flex-col items-center">
       <img
-        src="assets/images/execs/exec1.png"
+        src=""
         className="bg-white size-32 rounded-full border-4"
         style={{ borderColor: `hsl(var(--${roles[roleid].rolecolor}),0.5)` }}
       />
