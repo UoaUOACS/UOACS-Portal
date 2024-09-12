@@ -29,6 +29,11 @@ html {
   color: hsl(var(--foreground));
 }
 
+::selection {
+  background: hsl(var(--secondary), 0.8);
+  color: white;
+}
+
 .p3d {
   transform-style: preserve-3d;
 }
