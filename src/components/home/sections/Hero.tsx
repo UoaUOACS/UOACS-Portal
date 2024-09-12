@@ -20,7 +20,7 @@ export const HeroSection = ({ ...props }: HeroProps) => {
   };
 
   return (
-    <div {...props} className={cn('mt-12 min-h-[400px] w-full grid place-items-center', props.className)}>
+    <div {...props} className={cn('sm:mt-12 min-h-[400px] w-full grid place-items-center', props.className)}>
       <HeroBlur />
       <div className="flex flex-col items-center">
         <h3 className="text-2xl sm:text-5xl font-bold w-[400px] sm:w-[600px] flex-wrap flex justify-center">

@@ -17,7 +17,7 @@ export default function GalleryPage() {
           transition={{ delay: 1 }}
         >
           <div className="flex">
-            <div className=" whitespace-nowrap min-w-[220px] mr-2 flex-col min-h-full flex items-center">
+            <div className=" whitespace-nowrap min-w-[220px] mr-2 flex-col min-h-full md:flex hidden items-center ">
               <p className="text-4xl font-bold sticky top-[64px] bg-background">2024 S2</p>
               <div className="w-px h-full bg-foreground" />
             </div>
@@ -34,7 +34,7 @@ export default function GalleryPage() {
               <GalleryImageContent numberOfImages={14} path="assets/images/esportnight2024/ESPN_" />
             </div>
           </div>
-          <p className="text-4xl self-start min-w-[220px] text-center text-secondary">now</p>
+          <p className="text-4xl self-start min-w-[220px] text-center text-secondary hidden md:block">now</p>
         </motion.div>
       </div>
       <FooterNavigation />

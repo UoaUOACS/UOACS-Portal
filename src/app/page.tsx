@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 export default function Home() {
   return (
     <>
-      <IconLoadingScreen off />
+      <IconLoadingScreen />
       <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-hidden sm:px-8 px-4">
         {/* navigation */}
         <Navigation />

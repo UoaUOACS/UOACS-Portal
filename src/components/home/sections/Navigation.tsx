@@ -3,13 +3,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, type Variants } from 'framer-motion';
+import { Ellipsis } from 'lucide-react';
 
 import { navigation } from '@/data/navigation';
 
 export const Navigation = () => {
   const pathname = usePathname();
   return (
-    <nav className="h-[70px] my-4 mt-16 w-full flex items-center justify-end lg:justify-between gap-4 text-lg  ">
+    <nav className=" my-4 w-full flex lg:items-center items-end flex-row sm:flex-col lg:flex-row justify-end  gap-4 text-lg  ">
       <div className="w-16" />
       <div className=" sm:gap-4 sm:flex hidden ">
         {navigation.map(({ href, label }) => {
@@ -24,10 +25,8 @@ export const Navigation = () => {
       >
         Join us!
       </motion.a>
-      <div className="size-12 bg-white flex items-center justify-center gap-1 flex-col rounded-full">
-        <div className="w-8 h-1 bg-black"></div>
-        <div className="w-8 h-1 bg-black"></div>
-        <div className="w-8 h-1 bg-black"></div>
+      <div className="size-12 bg-white flex sm:hidden items-center justify-center gap-1 flex-col rounded-full ">
+        <Ellipsis color="#000" />
       </div>
     </nav>
   );
