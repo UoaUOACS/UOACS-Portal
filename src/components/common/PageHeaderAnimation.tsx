@@ -4,9 +4,10 @@ import { useLenis } from '@studio-freight/react-lenis';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 
-const OtherPageHeader = ({ label }: { label: string }) => {
+const OtherPageHeader = ({ label, off }: { label: string; off?: boolean }) => {
   const lenis = useLenis();
   useLayoutEffect(() => {
+    if (off) return;
     lenis?.scrollTo(0, {
       immediate: true,
     });

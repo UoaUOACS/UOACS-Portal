@@ -3,6 +3,8 @@ import localFont from 'next/font/local';
 
 import './globals.css';
 
+import { url } from 'inspector';
+
 import { ReactLenis } from '../libs/react-lenis';
 
 const geistSans = localFont({
@@ -40,6 +42,7 @@ const HelveticaNowDisplay = localFont({
 export const metadata: Metadata = {
   title: 'uoacs',
   description: 'University of Auckland Computer Science Society',
+  icons: { icon: 'assets/images/favicon.png' },
 };
 
 export default function RootLayout({

@@ -9,16 +9,17 @@ export default function GalleryPage() {
   return (
     <>
       <div className="flex flex-col min-h-dvh items-center px-2">
-        <OtherPageHeader label="Gallery" />
+        <OtherPageHeader label="Gallery" off />
         <motion.div
           className="size-full flex flex-col mb-24"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <div className="flex">
-            <div className=" whitespace-nowrap min-w-[220px] mr-2 flex-col min-h-full md:flex hidden items-center ">
-              <p className="text-4xl font-bold sticky top-[64px] bg-background">2024 S2</p>
+          <div className="flex h-max relative">
+            {/* Sticky */}
+            <div className="whitespace-nowrap min-w-[200px] mr-2 flex-col min-h-screen md:flex hidden items-center">
+              <p className="text-4xl font-bold sticky top-16 bg-background z-10">2024 S2</p>
               <div className="w-px h-full bg-foreground" />
             </div>
             <div className="flex flex-col gap-4 items-center w-full">
@@ -34,7 +35,7 @@ export default function GalleryPage() {
               <GalleryImageContent numberOfImages={14} path="assets/images/esportnight2024/ESPN_" />
             </div>
           </div>
-          <p className="text-4xl self-start min-w-[220px] text-center text-secondary hidden md:block">now</p>
+          <p className="text-4xl self-start min-w-[200px] text-center text-secondary hidden md:block">now</p>
         </motion.div>
       </div>
       <FooterNavigation />
