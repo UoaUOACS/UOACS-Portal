@@ -83,6 +83,7 @@ const useMenuSheet = () => {
 
 const SheetMenu = ({ children }: { children: React.ReactNode }) => {
   const [open, setopen] = useState(false);
+  const pathname = usePathname();
   const handleToggleMenu = () => {
     setopen(!open);
   };
@@ -91,7 +92,7 @@ const SheetMenu = ({ children }: { children: React.ReactNode }) => {
       <AnimatePresence>
         {open && (
           <motion.div
-            className=" size-full bg-black/40 fixed z-[9998] select-none"
+            className=" size-full bg-black/40 fixed z-[9998] select-none block sm:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -100,13 +101,29 @@ const SheetMenu = ({ children }: { children: React.ReactNode }) => {
         )}
       </AnimatePresence>
       <motion.div
-        className="fixed h-dvh w-dvw top-0 p-8 select-none bg-background z-[9999] "
+        className="fixed h-dvh w-dvw top-0 py-8 select-none bg-background z-[9999] block sm:hidden"
         initial={{ right: '-120%' }}
         animate={{ right: open ? '-20%' : '-120%' }}
       >
-        <button onClick={handleToggleMenu}>
-          <X fill="#FFF" className="size-16" />
+        <button onClick={handleToggleMenu} className="group ml-4 hover:bg-white border rounded-full p-2">
+          <X fill="#FFF" className="size-8 group-hover:stroke-black" />
         </button>
+
+        {navigation.map(({ href, label }) => {
+          if (href === pathname) return;
+          return (
+            <Link key={href} href={href}>
+              <motion.div
+                className="text-3xl py-2 my-4 relative pl-4 whitespace-nowrap select-none"
+                initial="initial"
+                animate="initial"
+                whileHover="hover"
+              >
+                <p>{label}</p>
+              </motion.div>
+            </Link>
+          );
+        })}
       </motion.div>
       {children}
     </MenuContext.Provider>
