@@ -1,9 +1,7 @@
 'use client';
 
-import { HTMLAttributes } from 'react';
 import OtherPageHeader from '@components/common/PageHeaderAnimation';
 import { GalleryImageContent, GalleryImageHeader } from '@components/gallery/GalleryImage';
-import ImageImporter from '@components/gallery/ImageImporter';
 import { FooterNavigation } from '@components/home/FooterNavigation';
 import { motion } from 'framer-motion';
 
@@ -21,7 +19,7 @@ export default function GalleryPage() {
           <div className="flex">
             <div className=" whitespace-nowrap min-w-[220px] mr-2 flex-col min-h-full flex items-center">
               <p className="text-4xl font-bold sticky top-[64px] bg-background">2024 S2</p>
-              <div className="w-[1px] h-full bg-foreground" />
+              <div className="w-px h-full bg-foreground" />
             </div>
             <div className="flex flex-col gap-4 items-center w-full">
               <GalleryImageHeader

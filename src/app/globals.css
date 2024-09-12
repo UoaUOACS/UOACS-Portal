@@ -16,6 +16,13 @@ html {
   --background: 218, 30%, 12%; /*hsl(218, 30%, 12%)*/
   --secondary: 23, 85%, 55%; /*hsl(23, 85%, 55%)*/
 
+  --excPresident: var(--secondary);
+  --excVicePresident: var(--secondary);
+  --excTresurer: var(--secondary);
+  --excTech: 44, 100%, 69%;
+  --excMarketing: 99, 100%, 69%;
+  --excEvent: 185, 100%, 69%;
+
   font-family: var(--font-helvetica-now-display);
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));

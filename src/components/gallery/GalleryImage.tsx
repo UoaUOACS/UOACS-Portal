@@ -1,7 +1,7 @@
 export const GalleryImageHeader = ({ Title, description }: { Title: string; description?: string }) => {
   return (
     <>
-      <div className="flex w-full text-blue-400 justify-center h-full items-center whitespace-nowrap">
+      <div className="flex size-full text-blue-400 justify-center  items-center whitespace-nowrap">
         <h3 className="text-3xl font-bold px-2">{Title}</h3>
       </div>
       {description && <p className="text-center w-2/3">{description}</p>}

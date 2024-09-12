@@ -23,12 +23,12 @@ export const HeroSection = ({ ...props }: HeroProps) => {
     <div {...props} className={cn('mt-12 min-h-[400px] w-full grid place-items-center', props.className)}>
       <HeroBlur />
       <div className="flex flex-col items-center">
-        <h3 className="text-3xl sm:text-5xl font-bold w-[400px] sm:w-[600px] flex-wrap flex justify-center">
+        <h3 className="text-2xl sm:text-5xl font-bold w-[400px] sm:w-[600px] flex-wrap flex justify-center">
           <p className="text-blue-400">University of Auckland</p>
           Computer Science Society
         </h3>
         <hr className="border-foreground w-4/6 mt-4" />
-        <h3 className="text-xl text-center mt-6 font-bold *:flex gap-2 *:gap-2 *:items-center flex items-center">
+        <h3 className="text-xl text-center mt-6 font-bold *:flex gap-2 *:gap-2 *:items-center flex items-center flex-wrap justify-center">
           <LocalNavigation OnClick={() => handleScrollTo('#connect')}>
             Connect
             <Cable />

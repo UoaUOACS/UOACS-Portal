@@ -18,9 +18,9 @@ export default function TeamPage() {
           <div className="flex flex-col items-center mb-16">
             <h3 className="text-3xl font-bold">UOACS 2024 Executives</h3>
             <div className="flex gap-8 mt-8">
-              <ExecProfile name="Joshua Li" roleid={0} />
-              <ExecProfile name="Chris Chiem" roleid={1} />
-              <ExecProfile name="Ben MacSweeney" roleid={2} />
+              <ExecProfile image="assets/images/execs/exec1.png" name="Joshua Li" roleid={0} />
+              <ExecProfile image="assets/images/execs/exec1.png" name="Chris Chiem" roleid={1} />
+              <ExecProfile image="assets/images/execs/exec1.png" name="Ben MacSweeney" roleid={2} />
             </div>
             <div className="flex gap-8 mt-8">
               <ExecProfile name="Zach Taylor" roleid={3} />
@@ -58,23 +58,27 @@ type ExecType = {
   };
 };
 const roles = [
-  'President',
-  'Vice President',
-  'Tresurer',
-  'Tech Lead',
-  'Tech Exec',
-  'Marketing Lead',
-  'Marketing Exec',
-  'Event Lead',
-  'Event Exec',
+  { rolename: 'President', rolecolor: 'excPresident' },
+  { rolename: 'Vice President', rolecolor: 'excPresident' },
+  { rolename: 'Tresurer', rolecolor: 'excPresident' },
+  { rolename: 'Tech Lead', rolecolor: 'excTech' },
+  { rolename: 'Tech Exec', rolecolor: 'excTech' },
+  { rolename: 'Marketing Lead', rolecolor: 'excMarketing' },
+  { rolename: 'Marketing Exec', rolecolor: 'excMarketing' },
+  { rolename: 'Event Lead', rolecolor: 'excEvent' },
+  { rolename: 'Event Exec', rolecolor: 'excEvent' },
 ];
 const ExecProfile = ({ name, roleid, image, links }: ExecType) => {
   const role = roles[roleid];
   return (
     <div className="w-32 flex flex-col items-center">
-      <div className="bg-white size-32 rounded-full"></div>
+      <img
+        src="assets/images/execs/exec1.png"
+        className="bg-white size-32 rounded-full border-4"
+        style={{ borderColor: `hsl(var(--${roles[roleid].rolecolor}),0.5)` }}
+      />
       <p className="truncate">{name}</p>
-      <p>{role}</p>
+      <p>{role.rolename}</p>
     </div>
   );
 };

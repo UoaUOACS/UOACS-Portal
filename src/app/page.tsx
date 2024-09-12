@@ -4,13 +4,14 @@ import { FooterNavigation } from '@components/home/FooterNavigation';
 import { IconLoadingScreen } from '@components/home/LoadingScreen';
 import { HeroSection } from '@components/home/sections/Hero';
 import { Navigation } from '@components/home/sections/Navigation';
+import SlideHeader from '@components/home/SlideHeader';
 import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
     <>
       <IconLoadingScreen off />
-      <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-hidden px-8">
+      <div className="max-w-dvw relative flex flex-col mb-36 items-center overflow-hidden sm:px-8 px-4">
         {/* navigation */}
         <Navigation />
         {/* Header Hero - Section 1 */}
@@ -31,7 +32,7 @@ export default function Home() {
 
 const AboutUs = () => {
   return (
-    <div className="max-w-[640px] w-4/5 flex items-center flex-col">
+    <div className="max-w-screen-sm sm:w-4/5 flex items-center text-center sm:text-left  flex-col">
       <h3 className="text-lg font-bold mb-2">Who are we? and what do we do?</h3>
       <AboutUsItem label="The Idea">
         UOACS was founded in 2023 by Joshua Li and Chris Chiem, and serves as the student body for computer science
@@ -53,14 +54,7 @@ const AboutUs = () => {
 const ConnectSection = () => {
   return (
     <div className=" pb-24 px-8 flex flex-col place-items-center" id="connect">
-      <motion.h1
-        className="text-8xl w-min self-start"
-        initial={{ translateX: '-100%' }}
-        whileInView={{ translateX: '0%' }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-      >
-        Connect
-      </motion.h1>
+      <SlideHeader label="Connect" direction="left" />
       <hr className=" border-foreground w-2/5 self-start" />
       <div className="mt-12 max-w-screen-sm text-center text-lg">
         Computer science students are known to be slightly more on the antisocial end of the spectrum and as a club, we
@@ -68,7 +62,7 @@ const ConnectSection = () => {
         University life can be daunting at times and we hope to serve as the catalyst between lifelong friendships. We
         do this through our mix of social, industry, educational and competitive events.
       </div>
-      <div className="w-3/4 max-w-[1200px] mt-8 h-[300px] relative overflow-hidden">
+      <div className="sm:w-3/4 w-full max-w-[1200px] mt-8 h-[300px] relative overflow-hidden">
         <Carousel
           Items={
             <>
@@ -102,24 +96,20 @@ const Carousel = ({ Items }: { Items: React.ReactNode }) => {
 const CollaborateSection = () => {
   return (
     <div className="pb-24 px-8 flex flex-col place-items-center" id="collaborate">
-      <motion.h1
-        className="text-8xl self-end"
-        initial={{ translateX: '100%' }}
-        whileInView={{ translateX: '0%' }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-      >
-        Collaborate
-      </motion.h1>
+      <SlideHeader label="Collaborate" direction="right" />
       <hr className=" border-foreground w-2/5 self-end" />
       <div className="flex">
-        <p className="mt-12 max-w-screen-sm text-center text-lg">
-          Our degree can be quite challenging at times and we believe that as a society, we have an obligation to do our
-          best to help out one another. Whilst maintaining academic integrity and abiding by UOA’s rules, we collaborate
-          with one another to achieve better results and ultimately, a better education. We firmly believe in the{' '}
+        <div className="mt-12 max-w-screen-sm text-center text-lg">
+          <p>
+            Our degree can be quite challenging at times and we believe that as a society, we have an obligation to do
+            our best to help out one another. Whilst maintaining academic integrity and abiding by UOA’s rules, we
+            collaborate with one another to achieve better results and ultimately, a better education. We firmly believe
+            in the
+          </p>
           <p className="text-2xl m-4">
             phrase: <strong className="font-bold text-secondary">Iron sharpens iron.</strong>
           </p>
-        </p>
+        </div>
       </div>
     </div>
   );
@@ -128,14 +118,7 @@ const CollaborateSection = () => {
 const NetworkSection = () => {
   return (
     <div className="pb-24 px-8 flex flex-col place-items-center" id="network">
-      <motion.h1
-        className="text-8xl w-min self-start"
-        initial={{ translateX: '-100%' }}
-        whileInView={{ translateX: '0%' }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-      >
-        Network
-      </motion.h1>
+      <SlideHeader label="Network" direction="left" />
       <hr className=" border-foreground w-2/5 self-start" />
       <div className="flex">
         <p className="mt-12 max-w-screen-sm text-center text-lg">
@@ -154,14 +137,7 @@ const NetworkSection = () => {
 const DevelopSection = () => {
   return (
     <div className="pb-24 px-8 flex flex-col place-items-center" id="develop">
-      <motion.h1
-        className="text-8xl w-min self-end"
-        initial={{ translateX: '100%' }}
-        whileInView={{ translateX: '0%' }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-      >
-        Develop
-      </motion.h1>
+      <SlideHeader label="Develop" direction="right" />
       <hr className=" border-foreground w-2/5 self-end" />
       <p className="mt-12 max-w-screen-sm text-center text-lg">
         Another core element of being a Computer Science student is the technical skills that we acquire throughout our
@@ -175,12 +151,13 @@ const DevelopSection = () => {
 
 const JoinUs = () => {
   return (
-    <div className="pb-24 flex flex-col place-items-center relative py-24" id="Join us">
+    <div className="pb-24 flex flex-col place-items-center relative sm:pb-16" id="Join us">
       <a
         href="https://forms.gle/kiLbz2N5WiqjxLoJ8"
-        className="text-5xl  select-none font-bold px-20 border rounded-full p-12 text-center hover:text-secondary hover:bg-white grid duration-200 transition-colors place-items-center"
+        className="sm:text-5xl text-4xl select-none font-bold border rounded-full py-6 sm:py-12 px-24 text-center hover:text-secondary hover:bg-white grid duration-200 transition-colors place-items-center"
       >
-        Join Us for 2024!
+        Join Us for <br />
+        2024!
       </a>
     </div>
   );
