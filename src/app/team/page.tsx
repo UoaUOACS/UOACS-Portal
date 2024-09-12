@@ -23,7 +23,7 @@ export default function TeamPage() {
                 <ExecProfile image="assets/images/execs/exec2.png" name="Chris Chiem" roleid={1} />
                 <ExecProfile image="assets/images/execs/exec3.png" name="Ben MacSweeney" roleid={2} />
               </div>
-              <div className="*:md:gap-8 sm:flex-col *:gap-4 *:mt-4 mt-0 *:md:mt-8 *:flex *:justify-center">
+              <div className="*:md:gap-8 sm:flex-col *:gap-4 mt-4 md:mt-8 *:flex *:justify-center">
                 <div className="flex flex-col sm:flex-row">
                   <ExecProfile image="assets/images/execs/exec4.png" name="Zach Taylor" roleid={3} />
                   <ExecProfile image="assets/images/execs/exec5.png" name="Jenny Lu" roleid={4} />
