@@ -23,7 +23,7 @@ export const Navigation = () => {
         <motion.a
           whileHover={{ scale: 1.1 }}
           href="https://forms.gle/kiLbz2N5WiqjxLoJ8"
-          className="bg-white text-black p-2 sm:px-8 px-12 rounded-full whitespace-nowrap select-none cursor-pointer"
+          className="bg-white text-black p-2 sm:px-8 px-10 rounded-full whitespace-nowrap select-none cursor-pointer"
         >
           Join us!
         </motion.a>

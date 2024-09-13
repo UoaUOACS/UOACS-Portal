@@ -15,7 +15,7 @@ const bgVariant = {
 
 const logoVariant = {
   initial: { scale: 2.5, top: '50%', translate: '-50% -50%', filter: 'blur(300px)' },
-  animate: { scale: 1, top: '16px', left: '32px', translate: '0% 0%', filter: 'blur(0px)' },
+  animate: { scale: 1, top: '16px', left: '16px', translate: '0% 0%', filter: 'blur(0px)' },
 };
 
 export const IconLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
