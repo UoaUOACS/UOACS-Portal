@@ -9,7 +9,7 @@ export default function GalleryPage() {
   return (
     <>
       <div className="flex flex-col min-h-dvh items-center px-2">
-        <OtherPageHeader label="Gallery" off />
+        <OtherPageHeader label="Gallery" />
         <motion.div
           className="size-full flex flex-col mb-24"
           initial={{ opacity: 0 }}
