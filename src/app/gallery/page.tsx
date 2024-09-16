@@ -30,9 +30,14 @@ export default function GalleryPage() {
         students. It was a night of introduction and social activities accompanied with free food that left everyone
         satisfied in every way."
               />
-              <GalleryImageContent numberOfImages={20} path="assets/images/launchnight/LN_" />
-              <GalleryImageHeader Title="UOACS x AUEC Valorant Tournament" />
-              <GalleryImageContent numberOfImages={14} path="assets/images/esportnight2024/ESPN_" />
+              <GalleryImageContent numberOfImages={20} path="/assets/images/launchnight/LN_" alt="launch_night" />
+              <GalleryImageHeader
+                Title="UOACS x AUEC Valorant Tournament"
+                description="Our collab with AUEC (Auckland Unviersity Esports Club) was another success. We saw 40 individual 
+sign ups and played a knockout styleed tournament. We split the individual signups into teams of five and tried to fairly distribute the ranks. 
+It was a huge success and got overwhelmingly positive reviews. Big thank you to AUEC and to Red Bull for their support!"
+              />
+              <GalleryImageContent numberOfImages={14} path="/assets/images/esportnight2024/ESPN_" alt="esport_night" />
             </div>
           </div>
           <p className="text-4xl self-start min-w-[200px] text-center text-secondary hidden md:block">now</p>

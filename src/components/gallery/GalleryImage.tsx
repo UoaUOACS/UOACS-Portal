@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { Scaling, X } from 'lucide-react';
+
 export const GalleryImageHeader = ({ Title, description }: { Title: string; description?: string }) => {
   return (
     <>
@@ -13,12 +17,41 @@ interface galleryImageProps {
   numberOfImages: number;
   path: string;
 }
+
 export const GalleryImageContent = ({ numberOfImages, path }: galleryImageProps) => {
   return (
-    <div className="flex gap-4 flex-wrap *:h-[200px] justify-center mb-8">
+    <div className="flex gap-4 flex-wrap justify-center mb-8">
       {new Array(numberOfImages).fill('').map((_, i) => {
-        return <img src={`${path}${i}.png`} key={i} />;
+        return <ViewableImage path={`${path}${i}.png`} key={i} />;
       })}
     </div>
+  );
+};
+
+const ViewableImage = ({ path }: { path: string }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <AnimatePresence mode="wait">
+      {open && (
+        <div
+          className="fixed size-full p-4 inset-0 flex items-center justify-center flex-col gap-4 select-none bg-black/60 z-[9999]"
+          onClick={handleClose}
+        >
+          <img
+            className="sm:max-w-[80%] w-full max-h-[80%] object-contain rounded select-none pointer-events-none"
+            src={path}
+          />
+          <X stroke="#FFF" className="cursor-pointer" />
+        </div>
+      )}
+      <div className="grid group relative place-items-center cursor-pointer" onClick={handleOpen}>
+        <Scaling className="absolute group-hover:block hidden top-2 right-2" stroke="#FFF" />
+        <img className="h-[200px] rounded select-none " src={path} loading="lazy" />
+      </div>
+    </AnimatePresence>
   );
 };
