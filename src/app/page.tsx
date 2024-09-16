@@ -66,11 +66,11 @@ const ConnectSection = () => {
         <Carousel
           Items={
             <>
-              <img src="assets/images/launchnight/LN_0.png" />
-              <img src="assets/images/launchnight/LN_4.png" />
-              <img src="assets/images/launchnight/LN_8.png" />
-              <img src="assets/images/launchnight/LN_10.png" />
-              <img src="assets/images/launchnight/LN_13.png" />
+              <img src="assets/images/launchnight/LN_0.png" alt="launch night image" />
+              <img src="assets/images/launchnight/LN_4.png" alt="launch night image" />
+              <img src="assets/images/launchnight/LN_8.png" alt="launch night image" />
+              <img src="assets/images/launchnight/LN_10.png" alt="launch night image" />
+              <img src="assets/images/launchnight/LN_13.png" alt="launch night image" />
             </>
           }
         />

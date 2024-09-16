@@ -16,19 +16,20 @@ export const GalleryImageHeader = ({ Title, description }: { Title: string; desc
 interface galleryImageProps {
   numberOfImages: number;
   path: string;
+  alt: string;
 }
 
-export const GalleryImageContent = ({ numberOfImages, path }: galleryImageProps) => {
+export const GalleryImageContent = ({ numberOfImages, path, alt }: galleryImageProps) => {
   return (
     <div className="flex gap-4 flex-wrap justify-center mb-8">
       {new Array(numberOfImages).fill('').map((_, i) => {
-        return <ViewableImage path={`${path}${i}.png`} key={i} />;
+        return <ViewableImage path={`${path}${i}.png`} key={i} alt={`${alt}-image-no.${i}`} />;
       })}
     </div>
   );
 };
 
-const ViewableImage = ({ path }: { path: string }) => {
+const ViewableImage = ({ path, alt }: { path: string; alt: string }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -44,13 +45,14 @@ const ViewableImage = ({ path }: { path: string }) => {
           <img
             className="sm:max-w-[80%] w-full max-h-[80%] object-contain rounded select-none pointer-events-none"
             src={path}
+            alt={alt}
           />
           <X stroke="#FFF" className="cursor-pointer" />
         </div>
       )}
       <div className="grid group relative place-items-center cursor-pointer" onClick={handleOpen}>
         <Scaling className="absolute group-hover:block hidden top-2 right-2" stroke="#FFF" />
-        <img className="h-[200px] rounded select-none " src={path} loading="lazy" />
+        <img className="h-[200px] rounded select-none " src={path} loading="lazy" alt={alt} />
       </div>
     </AnimatePresence>
   );
