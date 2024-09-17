@@ -1,13 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import OtherPageHeader from '@components/common/PageHeaderAnimation';
 import { FooterNavigation } from '@components/home/FooterNavigation';
-import { motion } from 'framer-motion';
+import { easeIn, motion, Variants } from 'framer-motion';
 
 export default function TeamPage() {
   return (
     <>
-      <div className="flex flex-col min-h-dvh items-center px-2">
+      <div className="flex flex-col min-h-dvh items-center  px-2">
         <OtherPageHeader label="Meet our execs" />
         <motion.div
           className="grid place-items-center"
@@ -56,7 +57,7 @@ type ExecType = {
   name: string;
   roleid: number;
   image?: string;
-  links?: {
+  socials?: {
     icon: React.ReactNode;
     link: string;
   };
@@ -72,17 +73,52 @@ const roles = [
   { rolename: 'Event Lead', rolecolor: 'excEvent' },
   { rolename: 'Event Exec', rolecolor: 'excEvent' },
 ];
-const ExecProfile = ({ name, roleid, image, links }: ExecType) => {
+
+const execMenuVariants: Variants = {
+  open: {
+    height: 400,
+  },
+  close: {
+    height: 0,
+  },
+};
+
+const ExecProfile = ({ name, roleid, image, socials: links }: ExecType) => {
+  const [open, setopen] = useState(false);
+  const handleOpen = () => {
+    setopen(true);
+  };
+  const handleClose = () => {
+    setopen(false);
+  };
+
   const role = roles[roleid];
   return (
-    <div className="w-32 flex flex-col items-center">
-      <img
-        src={image}
-        className="bg-white sm:size-32 size-24 rounded-full border-4"
-        style={{ borderColor: `hsl(var(--${roles[roleid].rolecolor}),0.5)` }}
-      />
-      <p className="text-xs sm:text-base truncate">{name}</p>
-      <p>{role.rolename}</p>
-    </div>
+    <>
+      {open && (
+        <>
+          <div className="fixed bg-black/70 w-dvw h-dv inset-0" onClick={handleClose}></div>
+          <motion.div
+            className="bg-background whitespace-nowrap min-w-[325px] origin-top rounded-lg fixed size-min top-1/2 left-1/2 [translate:-50%_-50%] p-8"
+            variants={execMenuVariants}
+            initial="close"
+            animate="open"
+            exit="close"
+            transition={{ ease: 'easeInOut' }}
+          >
+            {name}
+          </motion.div>
+        </>
+      )}
+      <div className="w-32 flex flex-col items-center" onClick={handleOpen}>
+        <img
+          src={image}
+          className="bg-white sm:size-32 cursor-pointer size-24 rounded-full border-4"
+          style={{ borderColor: `hsl(var(--${roles[roleid].rolecolor}),0.5)` }}
+        />
+        <p className="text-xs sm:text-base truncate">{name}</p>
+        <p>{role.rolename}</p>
+      </div>
+    </>
   );
 };
