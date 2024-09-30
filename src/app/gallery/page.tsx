@@ -49,7 +49,7 @@ A huge thank you to School of Computer Science - University of Auckland and Jane
                 numberOfImages={27}
                 path="/assets/images/industrynight2024/Industry_"
                 alt="industry_night"
-                format="jpg"
+                format="JPG"
               />
             </div>
           </div>
