@@ -38,6 +38,19 @@ sign ups and played a knockout styleed tournament. We split the individual signu
 It was a huge success and got overwhelmingly positive reviews. Big thank you to AUEC and to Red Bull for their support!"
               />
               <GalleryImageContent numberOfImages={14} path="/assets/images/esportnight2024/ESPN_" alt="esport_night" />
+
+              <GalleryImageHeader
+                Title="Industry Night 2024"
+                description="What an overwhelmingly successful night!! 🚀 
+We are thrilled to announce that our UOACS Industry Night on Thursday was a massive success with 141 sign-ups! 🎉 
+A huge thank you to School of Computer Science - University of Auckland and Jane Street for making this event possible and for supporting the next generation of tech leaders."
+              />
+              <GalleryImageContent
+                numberOfImages={27}
+                path="/assets/images/industrynight2024/Industry_"
+                alt="industry_night"
+                format="jpg"
+              />
             </div>
           </div>
           <p className="text-4xl self-start min-w-[200px] text-center text-secondary hidden md:block">now</p>
