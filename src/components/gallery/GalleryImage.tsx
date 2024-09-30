@@ -17,13 +17,14 @@ interface galleryImageProps {
   numberOfImages: number;
   path: string;
   alt: string;
+  format?: string;
 }
 
-export const GalleryImageContent = ({ numberOfImages, path, alt }: galleryImageProps) => {
+export const GalleryImageContent = ({ numberOfImages, path, alt, format = 'png' }: galleryImageProps) => {
   return (
     <div className="flex gap-4 flex-wrap justify-center mb-8">
       {new Array(numberOfImages).fill('').map((_, i) => {
-        return <ViewableImage path={`${path}${i}.png`} key={i} alt={`${alt}-image-no.${i}`} />;
+        return <ViewableImage path={`${path}${i}.${format}`} key={i} alt={`${alt}-image-no.${i}`} />;
       })}
     </div>
   );
