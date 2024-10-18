@@ -22,7 +22,7 @@ html {
   --excTech: 44, 100%, 69%;
   --excMarketing: 99, 100%, 69%;
   --excEvent: 185, 100%, 69%;
-  
+
   font-family: var(--font-helvetica-now-display);
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
