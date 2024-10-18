@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import { AnimatePresence } from 'framer-motion';
 import { Scaling, X } from 'lucide-react';
 
@@ -43,17 +44,32 @@ const ViewableImage = ({ path, alt }: { path: string; alt: string }) => {
           className="fixed size-full p-4 inset-0 flex items-center justify-center flex-col gap-4 select-none bg-black/60 z-[9999]"
           onClick={handleClose}
         >
-          <img
+          <Image
+            width={1600}
+            height={1200}
             className="sm:max-w-[80%] w-full max-h-[80%] object-contain rounded select-none pointer-events-none"
             src={path}
             alt={alt}
+            quality={100}
+            priority
           />
           <X stroke="#FFF" className="cursor-pointer" />
         </div>
       )}
-      <div className="grid group relative place-items-center cursor-pointer" onClick={handleOpen}>
+      <div
+        className="grid group relative min-h-[200px] max-h-[200px] place-items-center cursor-pointer"
+        onClick={handleOpen}
+      >
         <Scaling className="absolute group-hover:block hidden top-2 right-2" stroke="#FFF" />
-        <img className="h-[200px] rounded select-none " src={path} loading="lazy" alt={alt} />
+        <Image
+          fill
+          sizes="300px"
+          quality={30}
+          className="rounded select-none !static !w-min !h-[200px]"
+          src={path}
+          alt={alt}
+          loading="eager"
+        />
       </div>
     </AnimatePresence>
   );

@@ -1,10 +1,10 @@
 {
   "extends": [
+    "prettier",
+    "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
     "next/typescript",
-    "prettier",
     "plugin:@typescript-eslint/recommended",
-    "plugin:tailwindcss/recommended"
   ],
   "plugins": ["tailwindcss"],
   "rules": {
@@ -20,20 +20,20 @@
         "caughtErrorsIgnorePattern": "^_",
         "destructuredArrayIgnorePattern": "^_",
         "varsIgnorePattern": "^_",
-        "ignoreRestSiblings": true
-      }
-    ]
+        "ignoreRestSiblings": true,
+      },
+    ],
   },
   "settings": {
     "tailwindcss": {
       "callees": ["cn", "twMerge", "twJoin", "clsx"],
-      "config": "tailwind.config.js"
-    }
+      "config": "tailwind.config.js",
+    },
   },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js"],
-      "parser": "@typescript-eslint/parser"
-    }
-  ]
+      "parser": "@typescript-eslint/parser",
+    },
+  ],
 }

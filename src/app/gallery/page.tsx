@@ -24,21 +24,19 @@ export default function GalleryPage() {
             </div>
             <div className="flex flex-col gap-4 items-center w-full">
               <GalleryImageHeader
-                Title="Launch Night"
-                description="We held our very first event in the short history of UOACS and it was a stellar success! With 90+
-        attendees and 25+ new sign ups, our event was filled to the brim with energetic and expectant computer science
-        students. It was a night of introduction and social activities accompanied with free food that left everyone
-        satisfied in every way."
+                Title="UOACS x GDSC x ASPA Pool Night"
+                description="2024 was capped with an event that turned out to be a blast!
+Google Developer Student Club, Auckland Student Pool Association and our club came together to present a Social Pool Night.
+We packed out Orange Pool Club on City Road with over 70+ attendees, almost exceeding our booking space, and had a great night of healthy competition. 
+Thank you all for coming and making our last event one for 2024 one to remember."
               />
-              <GalleryImageContent numberOfImages={20} path="/assets/images/launchnight/LN_" alt="launch_night" />
-              <GalleryImageHeader
-                Title="UOACS x AUEC Valorant Tournament"
-                description="Our collab with AUEC (Auckland Unviersity Esports Club) was another success. We saw 40 individual 
-sign ups and played a knockout styleed tournament. We split the individual signups into teams of five and tried to fairly distribute the ranks. 
-It was a huge success and got overwhelmingly positive reviews. Big thank you to AUEC and to Red Bull for their support!"
+              <GalleryImageContent
+                numberOfImages={46}
+                path="/assets/images/poolnight2024/Pool_"
+                alt="industry_night"
+                format="JPG"
               />
-              <GalleryImageContent numberOfImages={14} path="/assets/images/esportnight2024/ESPN_" alt="esport_night" />
-
+              {/*  */}
               <GalleryImageHeader
                 Title="Industry Night 2024"
                 description="What an overwhelmingly successful night!! 🚀 
@@ -51,6 +49,23 @@ A huge thank you to School of Computer Science - University of Auckland and Jane
                 alt="industry_night"
                 format="JPG"
               />
+              {/*  */}
+              <GalleryImageHeader
+                Title="UOACS x AUEC Valorant Tournament"
+                description="Our collab with AUEC (Auckland Unviersity Esports Club) was another success. We saw 40 individual 
+sign ups and played a knockout styleed tournament. We split the individual signups into teams of five and tried to fairly distribute the ranks. 
+It was a huge success and got overwhelmingly positive reviews. Big thank you to AUEC and to Red Bull for their support!"
+              />
+              <GalleryImageContent numberOfImages={14} path="/assets/images/esportnight2024/ESPN_" alt="esport_night" />
+              {/*  */}
+              <GalleryImageHeader
+                Title="Launch Night"
+                description="We held our very first event in the short history of UOACS and it was a stellar success! With 90+
+        attendees and 25+ new sign ups, our event was filled to the brim with energetic and expectant computer science
+        students. It was a night of introduction and social activities accompanied with free food that left everyone
+        satisfied in every way."
+              />
+              <GalleryImageContent numberOfImages={20} path="/assets/images/launchnight/LN_" alt="launch_night" />
             </div>
           </div>
           <p className="text-4xl self-start min-w-[200px] text-center text-secondary hidden md:block">now</p>
