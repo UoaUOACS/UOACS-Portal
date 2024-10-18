@@ -72,17 +72,36 @@ const roles = [
   { rolename: 'Event Lead', rolecolor: 'excEvent' },
   { rolename: 'Event Exec', rolecolor: 'excEvent' },
 ];
+const socialLinks: { [id: string]: string } = {
+  "Joshua Li": "https://www.linkedin.com/in/joshua-li-92b87926a/",
+  "Chris Chiem": "https://www.linkedin.com/in/chris-chiem-uoa/",
+  "Jed Gannaban": "https://www.linkedin.com/in/jedrex-gannaban-b35943296/",
+  "Josh Lin": "https://www.linkedin.com/in/joshua-lin-55130a27a/",
+  "Satoi Miyamoto": "https://www.linkedin.com/in/satoi-miyamoto-1a80422b8/",
+  "Sanskriti Roy": "https://www.linkedin.com/in/sanskriti-roy-5s18s23/",
+  "Sooji Noh": "https://www.linkedin.com/in/sooji-noh-909731293/",
+  "Dhiren Patel": "https://www.linkedin.com/in/dhiren-patel-5a58832b7/",
+  "Zach Taylor": "https://www.linkedin.com/in/zach-taylor-uoa/",
+  "Casey Ryan": "https://www.linkedin.com/in/casey-absolum-aab7b8297/",
+  "Jenny Lu": "https://www.linkedin.com/in/jenny-lu-762952233/",
+  "Koutaro Yumiba": "https://www.linkedin.com/in/koutaro-yumiba-66aa32256/",
+  "Narin Lane": "https://www.linkedin.com/in/narin-lane/",
+  "Chanasit Jitsawatpaiboon": "https://www.linkedin.com/in/chanasit-jit/",
+  "Ben MacSweeney": "https://www.linkedin.com/in/ben-macsweeney-765321204/",
+}
 const ExecProfile = ({ name, roleid, image, links }: ExecType) => {
   const role = roles[roleid];
   return (
     <div className="w-32 flex flex-col items-center">
-      <img
-        src={image}
-        className="bg-white sm:size-32 size-24 rounded-full border-4"
-        style={{ borderColor: `hsl(var(--${roles[roleid].rolecolor}),0.5)` }}
-      />
+      <a href={`${socialLinks[name]}`} target="_blank">
+        <img
+          src={image}
+          className="bg-white sm:size-32 size-24 rounded-full border-4"
+          style={{ borderColor: `hsl(var(--${roles[roleid].rolecolor}),0.5)` }}
+        />
+      </a>
       <p className="text-xs sm:text-base truncate">{name}</p>
       <p>{role.rolename}</p>
-    </div>
+    </div >
   );
 };
