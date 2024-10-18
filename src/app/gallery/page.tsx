@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import OtherPageHeader from '@components/common/PageHeaderAnimation';
-import { GalleryImageContent, GalleryImageHeader } from '@components/gallery/GalleryImage';
-import { FooterNavigation } from '@components/home/FooterNavigation';
-import { motion } from 'framer-motion';
+import OtherPageHeader from "@components/common/PageHeaderAnimation";
+import { GalleryImageContent, GalleryImageHeader } from "@components/gallery/GalleryImage";
+import { FooterNavigation } from "@components/home/FooterNavigation";
+import { motion } from "framer-motion";
 
 export default function GalleryPage() {
   return (
     <>
-      <div className="flex flex-col min-h-dvh items-center px-2">
+      <div className="flex min-h-dvh flex-col items-center px-2">
         <OtherPageHeader label="Gallery" />
         <motion.div
-          className="size-full flex flex-col mb-24"
+          className="mb-24 flex size-full flex-col"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          <div className="flex h-max relative">
+          <div className="relative flex h-max">
             {/* Sticky */}
-            <div className="whitespace-nowrap min-w-[200px] mr-2 flex-col min-h-screen md:flex hidden items-center">
-              <p className="text-4xl font-bold sticky top-16 bg-background z-10">2024 S2</p>
-              <div className="w-px h-full bg-foreground" />
+            <div className="mr-2 hidden min-h-screen min-w-[200px] flex-col items-center whitespace-nowrap md:flex">
+              <p className="sticky top-16 z-10 bg-background text-4xl font-bold">2024 S2</p>
+              <div className="h-full w-px bg-foreground" />
             </div>
-            <div className="flex flex-col gap-4 items-center w-full">
+            <div className="flex w-full flex-col items-center gap-4">
               <GalleryImageHeader
                 Title="UOACS x GDSC x ASPA Pool Night"
                 description="2024 was capped with an event that turned out to be a blast!
@@ -68,7 +68,7 @@ It was a huge success and got overwhelmingly positive reviews. Big thank you to 
               <GalleryImageContent numberOfImages={20} path="/assets/images/launchnight/LN_" alt="launch_night" />
             </div>
           </div>
-          <p className="text-4xl self-start min-w-[200px] text-center text-secondary hidden md:block">now</p>
+          <p className="hidden min-w-[200px] self-start text-center text-4xl text-secondary md:block">now</p>
         </motion.div>
       </div>
       <FooterNavigation />

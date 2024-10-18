@@ -7,11 +7,11 @@ type ClubExectutiveType = {
 
 export const clubExecutives: ClubExectutiveType[] = [
   {
-    name: 'Josh li',
-    role: 'President',
+    name: "Josh li",
+    role: "President",
   },
   {
-    name: 'chris chiem',
-    role: 'Vice President',
+    name: "chris chiem",
+    role: "Vice President",
   },
 ];

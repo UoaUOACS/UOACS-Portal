@@ -65,11 +65,11 @@ html {
 }
 
 .dottedmask {
-  mask-image: url('../assets/svg/dotted.svg');
+  mask-image: url("../assets/svg/dotted.svg");
 }
 
 .grainy {
-  background-image: url('../assets/images/grainy.png');
+  background-image: url("../assets/images/grainy.png");
 }
 
 .lock {
