@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import OtherPageHeader from '@components/common/PageHeaderAnimation';
 import { FooterNavigation } from '@components/home/FooterNavigation';
-import { easeIn, motion, Variants } from 'framer-motion';
+import { AnimatePresence, easeIn, motion, Variants } from 'framer-motion';
 
 export default function TeamPage() {
   return (
@@ -76,11 +76,18 @@ const roles = [
 
 const execMenuVariants: Variants = {
   open: {
-    height: 400,
+    clipPath: 'inset(0% 0% 0% 0%)',
   },
   close: {
-    height: 0,
+    clipPath: 'inset(50% 0% 50% 0%)',
   },
+  exit: { opacity: 0, scale: 0.9 },
+};
+
+const modalVariant: Variants = {
+  close: { opacity: 0 },
+  open: { opacity: 1 },
+  exit: { opacity: 0 },
 };
 
 const ExecProfile = ({ name, roleid, image, socials: links }: ExecType) => {
@@ -95,21 +102,33 @@ const ExecProfile = ({ name, roleid, image, socials: links }: ExecType) => {
   const role = roles[roleid];
   return (
     <>
-      {open && (
-        <>
-          <div className="fixed bg-black/70 w-dvw h-dv inset-0" onClick={handleClose}></div>
-          <motion.div
-            className="bg-background whitespace-nowrap min-w-[325px] origin-top rounded-lg fixed size-min top-1/2 left-1/2 [translate:-50%_-50%] p-8"
-            variants={execMenuVariants}
-            initial="close"
-            animate="open"
-            exit="close"
-            transition={{ ease: 'easeInOut' }}
-          >
-            {name}
-          </motion.div>
-        </>
-      )}
+      <AnimatePresence mode="wait">
+        {open && (
+          <>
+            <motion.div
+              key="modal"
+              variants={modalVariant}
+              className="fixed bg-black/70 w-dvw h-dv inset-0"
+              initial="close"
+              animate="open"
+              exit="exit"
+              transition={{ ease: 'easeOut', duration: 0.2 }}
+              onClick={handleClose}
+            />
+            <motion.div
+              key="dialog"
+              className="bg-background flex flex-col whitespace-nowrap min-w-[425px] origin-top rounded-lg fixed size-min top-1/2 left-1/2 [translate:-50%_-50%] p-8"
+              variants={execMenuVariants}
+              initial="close"
+              animate="open"
+              exit="exit"
+              transition={{ duration: 0.1 }}
+            >
+              <p>{name}</p>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
       <div className="w-32 flex flex-col items-center" onClick={handleOpen}>
         <img
           src={image}
