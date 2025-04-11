@@ -1,5 +1,7 @@
 import React from "react";
 
+import { aboutUsData } from "../../_data/aboutUsData";
+
 interface AboutUsItemProps {
   label?: string | React.ReactNode;
   children: React.ReactNode;
@@ -19,20 +21,12 @@ const AboutUsItem = ({ label, children }: AboutUsItemProps) => {
 export const AboutUs = () => {
   return (
     <div className="flex max-w-screen-sm flex-col items-center text-center sm:w-4/5 sm:text-left">
-      <h3 className="mb-2 text-lg font-bold">Who are we? and what do we do?</h3>
-      <AboutUsItem label="The Idea">
-        UOACS was founded in 2023 by Joshua Li and Chris Chiem, and serves as the student body for computer science
-        students. The idea was birthed on a table in Kate Edgar Level 0 while studying for CS120 and contemplating what
-        our future would look like.
-      </AboutUsItem>
-      <AboutUsItem>
-        We realized that other practices had their own societies and associations while we were struggling to find like
-        minded individuals. So we did what no one else was doing, and created this club.
-      </AboutUsItem>
-      <AboutUsItem>
-        The core foundations of what we do and who we are are the following: <br />
-        <strong className="text-secondary">Connect, collaborate, network and develop.</strong>
-      </AboutUsItem>
+      <h3 className="mb-2 text-lg font-bold">{aboutUsData.title}</h3>
+      {aboutUsData.items.map((item, index) => (
+        <AboutUsItem key={index} label={item.label}>
+          {item.content}
+        </AboutUsItem>
+      ))}
     </div>
   );
 };

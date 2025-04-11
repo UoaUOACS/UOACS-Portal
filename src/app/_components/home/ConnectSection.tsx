@@ -2,7 +2,8 @@ import React from "react";
 import SlideHeader from "@components/home/SlideHeader";
 import { motion } from "framer-motion";
 
-import { carouselImages } from "../../_data/home/carouselImages";
+import { carouselImages } from "../../_data/carouselImages";
+import { connectData } from "../../_data/connectData";
 
 interface CarouselProps {
   Items: React.ReactNode;
@@ -30,14 +31,9 @@ const Carousel = ({ Items }: CarouselProps) => {
 export const ConnectSection = () => {
   return (
     <div className="flex flex-col place-items-center px-8 pb-24" id="connect">
-      <SlideHeader label="Connect" direction="left" />
+      <SlideHeader label={connectData.title} direction={connectData.direction} />
       <hr className="w-2/5 self-start border-foreground" />
-      <div className="mt-12 max-w-screen-sm text-center text-lg">
-        Computer science students are known to be slightly more on the antisocial end of the spectrum and as a club, we
-        hope to break that stereotype. <br />
-        University life can be daunting at times and we hope to serve as the catalyst between lifelong friendships. We
-        do this through our mix of social, industry, educational and competitive events.
-      </div>
+      <div className="mt-12 max-w-screen-sm text-center text-lg">{connectData.content}</div>
       <div className="relative mt-8 h-[300px] w-full max-w-[1200px] overflow-hidden sm:w-3/4">
         <Carousel
           Items={

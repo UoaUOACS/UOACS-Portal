@@ -53,7 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${HelveticaNowDisplay.className} antialiased`}>
-        <ReactLenis root>{children}</ReactLenis>
+        {/* <ReactLenis root>{children}</ReactLenis> */}
+        {children}
       </body>
     </html>
   );

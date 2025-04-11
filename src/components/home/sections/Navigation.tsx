@@ -22,7 +22,7 @@ export const Navigation = () => {
         </div>
         <motion.a
           whileHover={{ scale: 1.1 }}
-          href="https://forms.gle/kiLbz2N5WiqjxLoJ8"
+          href="https://forms.gle/wE4YkHsPvyQ8Jx6YA"
           className="cursor-pointer select-none whitespace-nowrap rounded-full bg-white p-2 px-10 text-black sm:px-8"
         >
           Join us!
