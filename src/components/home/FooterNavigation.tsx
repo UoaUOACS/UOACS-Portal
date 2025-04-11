@@ -10,7 +10,7 @@ import { cn } from "@/libs/utils";
 
 const logos = ["/assets/images/UOACSLogo.svg"];
 
-export const FooterNavigation = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
+export const FooterNavigation = ({ className }: { className?: string }) => {
   const container = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { scrollYProgress } = useScroll({
@@ -37,7 +37,7 @@ export const FooterNavigation = ({ className, children }: { className?: string; 
           })}
         </div>
         {logos.map((image, i) => {
-          return <img key={i} className="w-[150px]" src={image} />;
+          return <img key={i} alt="logo" className="w-[150px]" src={image} />;
         })}
       </motion.div>
     </footer>

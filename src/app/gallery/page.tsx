@@ -1,9 +1,7 @@
-"use client";
-
 import OtherPageHeader from "@components/common/PageHeaderAnimation";
 import { GalleryImageContent, GalleryImageHeader } from "@components/gallery/GalleryImage";
 import { FooterNavigation } from "@components/home/FooterNavigation";
-import { motion } from "framer-motion";
+import * as motion from "framer-motion/client";
 
 export default function GalleryPage() {
   return (
@@ -52,8 +50,8 @@ A huge thank you to School of Computer Science - University of Auckland and Jane
               {/*  */}
               <GalleryImageHeader
                 Title="UOACS x AUEC Valorant Tournament"
-                description="Our collab with AUEC (Auckland Unviersity Esports Club) was another success. We saw 40 individual 
-sign ups and played a knockout styleed tournament. We split the individual signups into teams of five and tried to fairly distribute the ranks. 
+                description="Our collab with AUEC (Auckland University Esports Club) was another success. We saw 40 individual 
+sign ups and played a knockout styled tournament. We split the individual signups into teams of five and tried to fairly distribute the ranks. 
 It was a huge success and got overwhelmingly positive reviews. Big thank you to AUEC and to Red Bull for their support!"
               />
               <GalleryImageContent numberOfImages={14} path="/assets/images/esportnight2024/ESPN_" alt="esport_night" />

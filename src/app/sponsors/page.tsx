@@ -1,8 +1,6 @@
-"use client";
-
 import OtherPageHeader from "@components/common/PageHeaderAnimation";
 import { FooterNavigation } from "@components/home/FooterNavigation";
-import { motion } from "framer-motion";
+import * as motion from "framer-motion/client";
 
 export default function SponsorsPage() {
   return (

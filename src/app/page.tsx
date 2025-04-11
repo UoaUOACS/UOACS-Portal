@@ -1,5 +1,3 @@
-"use client";
-
 import { FooterNavigation } from "@components/home/FooterNavigation";
 import { IconLoadingScreen } from "@components/home/LoadingScreen";
 import { HeroSection } from "@components/home/sections/Hero";

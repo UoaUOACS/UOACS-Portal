@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export const developData = {
   title: "Develop",
   direction: "right" as const,

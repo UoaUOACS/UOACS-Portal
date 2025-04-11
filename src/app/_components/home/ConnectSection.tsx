@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import SlideHeader from "@components/home/SlideHeader";
 import { motion } from "framer-motion";
