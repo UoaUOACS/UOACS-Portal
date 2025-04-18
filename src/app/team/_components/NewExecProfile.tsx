@@ -5,10 +5,10 @@ import { ExecType } from "../_data/Exec.type";
 
 export const ExecProfile = (props: ExecType) => {
   return (
-    <div className="flex flex-col items-center whitespace-nowrap">
+    <div className="relative flex flex-col">
       <Link
+        className="relative size-60 overflow-hidden rounded bg-gray-200"
         href={props.social.linkedIn}
-        className="relative size-24 overflow-hidden rounded-full border-4 bg-white sm:size-32"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -19,10 +19,12 @@ export const ExecProfile = (props: ExecType) => {
           style={{ borderColor: `hsl(var(--${props.team}), 0.5)` }}
         />
       </Link>
-      <p className="truncate text-xs sm:text-base">{props.name}</p>
-      <p>
-        {props.team} {props.director && "Director"}
-      </p>
+      <div className="absolute bottom-0 left-1/2 flex w-full -translate-x-1/2 translate-y-1/2 flex-col gap-1 bg-foreground p-2 px-4 text-xl text-background">
+        <p className="truncate">{props.name}</p>
+        <p>
+          {props.team} {props.director && "Director"}
+        </p>
+      </div>
     </div>
   );
 };

@@ -20,39 +20,37 @@ export default function TeamPage() {
         >
           <div className="mb-16 flex flex-col">
             <h3 className="text-center text-3xl font-bold">UOACS 2025 Executives</h3>
-            <div className="mt-4 *:flex *:justify-center *:sm:gap-4 md:mt-8 *:md:gap-8">
-              <div>
-                <ExecProfile {...team[0]} />
-                <ExecProfile {...team[1]} />
-                <ExecProfile {...team[2]} />
-                <ExecProfile {...team[3]} />
-                <ExecProfile {...team[4]} />
-              </div>
-              <div className="mt-4 *:flex *:justify-center *:gap-4 sm:flex-col md:mt-8 *:md:gap-8">
-                <div className="flex flex-col sm:flex-row">
-                  <ExecProfile {...team[5]} />
-                  <ExecProfile {...team[6]} />
-                  <ExecProfile {...team[7]} />
-                  <ExecProfile {...team[8]} />
-                  <ExecProfile {...team[9]} />
+            <div className="mt-32 grid w-dvw grid-cols-[auto,minmax(auto,1200px),auto] place-items-center px-4">
+              <div className="col-start-2 flex w-full flex-col items-center justify-center gap-16 px-4 text-center *:mx-auto *:w-full *:justify-center">
+                <h1 className="text-5xl font-semibold">Admin Team</h1>
+                <div className="exec-row grid w-min justify-center gap-8">
+                  {team.slice(0, 5).map((member) => (
+                    <ExecProfile key={member.name} {...member} />
+                  ))}
                 </div>
-                <div className="flex flex-col sm:flex-row">
-                  <ExecProfile {...team[10]} />
-                  <ExecProfile {...team[11]} />
-                  <ExecProfile {...team[12]} />
-                  <ExecProfile {...team[13]} />
+                <h1 className="text-5xl font-semibold">Design Team</h1>
+                <div className="exec-row grid gap-8">
+                  {team.slice(10, 12).map((member) => (
+                    <ExecProfile key={member.name} {...member} />
+                  ))}
                 </div>
-                <div className="flex flex-col sm:flex-row">
-                  <ExecProfile {...team[14]} />
-                  <ExecProfile {...team[15]} />
-                  <ExecProfile {...team[16]} />
-                  <ExecProfile {...team[17]} />
+                <h1 className="text-5xl font-semibold">Marketing Team</h1>
+                <div className="exec-row grid gap-8">
+                  {team.slice(12, 14).map((member) => (
+                    <ExecProfile key={member.name} {...member} />
+                  ))}
                 </div>
-                <div className="flex flex-col sm:flex-row">
-                  <ExecProfile {...team[18]} />
-                  <ExecProfile {...team[19]} />
-                  <ExecProfile {...team[20]} />
-                  <ExecProfile {...team[21]} />
+                <h1 className="text-5xl font-semibold">Tech Team</h1>
+                <div className="exec-row grid gap-8">
+                  {team.slice(5, 10).map((member) => (
+                    <ExecProfile key={member.name} {...member} />
+                  ))}
+                </div>
+                <h1 className="text-5xl font-semibold">Event Team</h1>
+                <div className="exec-row grid gap-8">
+                  {team.slice(14).map((member) => (
+                    <ExecProfile key={member.name} {...member} />
+                  ))}
                 </div>
               </div>
             </div>

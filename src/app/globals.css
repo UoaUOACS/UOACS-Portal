@@ -77,3 +77,7 @@ html {
   position: relative;
   height: 100vh;
 }
+
+.exec-row {
+  grid-template-columns: repeat(auto-fill, 150px);
+}
