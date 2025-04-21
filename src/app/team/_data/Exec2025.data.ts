@@ -44,7 +44,7 @@ const team2025: ExecType[] = [
     name: "Anton Garay",
     team: "Tech",
     image: "/assets/images/execs/AntG.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/chanasit-jit/" },
+    social: { linkedIn: "https://www.linkedin.com/in/antga/" },
     director: true,
   },
   {
@@ -57,27 +57,27 @@ const team2025: ExecType[] = [
     name: "Kelvin Chen",
     team: "Tech",
     image: "/assets/images/execs/KelC.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/zach-taylor-uoa/" },
+    social: { linkedIn: "https://www.linkedin.com/in/kelvin-chen8/" },
   },
   {
     name: "Andrew Lin",
     team: "Tech",
     image: "/assets/images/execs/AndL.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/zach-taylor-uoa/" },
+    social: { linkedIn: "https://www.linkedin.com/in/andrew-sy-lin/" },
   },
   // design
   {
     name: "Andrew Qiu",
     team: "Design",
     image: "/assets/images/execs/AndQ.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/zach-taylor-uoa/" },
+    social: { linkedIn: "https://www.linkedin.com/in/andrewqqiu/" },
     director: true,
   },
   {
     name: "Louise Wang",
     team: "Design",
     image: "/assets/images/execs/LouW.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/zach-taylor-uoa/" },
+    social: { linkedIn: "https://www.linkedin.com/in/louisewang7245/" },
   },
   // marketing
   {
@@ -91,7 +91,7 @@ const team2025: ExecType[] = [
     name: "Yuting Guo",
     team: "Marketing",
     image: "/assets/images/execs/YutG.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/casey-absolum-aab7b8297/" },
+    social: { linkedIn: "https://www.linkedin.com/" },
   },
   // event
   {
@@ -124,13 +124,13 @@ const team2025: ExecType[] = [
     name: "Hannah Santiago",
     team: "Event",
     image: "/assets/images/execs/HanS.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/narin-lane/" },
+    social: { linkedIn: "https://www.linkedin.com/in/hannah-santiago-623408261/" },
   },
   {
     name: "Yasith Alahendara",
     team: "Event",
     image: "/assets/images/execs/YasA.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/narin-lane/" },
+    social: { linkedIn: "https://www.linkedin.com/in/yasith-alahendara-6462812b8/" },
   },
   {
     name: "Ashlee Shum",
@@ -142,7 +142,7 @@ const team2025: ExecType[] = [
     name: "Owen Sugden",
     team: "Event",
     image: "/assets/images/execs/OweS.webp",
-    social: { linkedIn: "https://www.linkedin.com/in/narin-lane/" },
+    social: { linkedIn: "https://www.linkedin.com/in/owensugdencs/" },
   },
 ];
 
