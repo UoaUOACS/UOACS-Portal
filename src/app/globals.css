@@ -70,12 +70,28 @@ html {
 
 .grainy {
   background-image: url("../assets/images/grainy.png");
+  background-repeat: repeat;
 }
 
 .lock {
   overflow: hidden;
   position: relative;
   height: 100vh;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    background-position: 0% 0%;
+    scale: 1;
+  }
+  100% {
+    background-position: 100% 90%;
+    scale: 1.1;
+  }
+}
+
+.scale-animation {
+  animation: scaleAnimation 120s infinite linear;
 }
 
 .exec-row {
