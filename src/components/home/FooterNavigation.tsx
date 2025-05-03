@@ -10,7 +10,7 @@ import { cn } from "@/libs/utils";
 
 const logos = ["/assets/images/UOACSLogo.svg"];
 
-export const FooterNavigation = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
+export const FooterNavigation = ({ className }: { className?: string }) => {
   const container = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { scrollYProgress } = useScroll({
@@ -20,7 +20,7 @@ export const FooterNavigation = ({ className, children }: { className?: string; 
   const y = useTransform(scrollYProgress, [0, 1], [-125, 0]);
 
   return (
-    <div className={cn("Card-shadow relative w-full overflow-hidden bg-black", className)} ref={container}>
+    <footer className={cn("Card-shadow relative mt-auto w-full overflow-hidden bg-black", className)} ref={container}>
       <motion.div style={{ y }} className="flex h-full flex-col items-center justify-center gap-2 py-10">
         <div className="flex flex-wrap justify-center gap-2">
           {navigation.map(({ href, label }, i) => {
@@ -37,9 +37,9 @@ export const FooterNavigation = ({ className, children }: { className?: string; 
           })}
         </div>
         {logos.map((image, i) => {
-          return <img key={i} className="w-[150px]" src={image} />;
+          return <img key={i} alt="logo" className="w-[150px]" src={image} />;
         })}
       </motion.div>
-    </div>
+    </footer>
   );
 };

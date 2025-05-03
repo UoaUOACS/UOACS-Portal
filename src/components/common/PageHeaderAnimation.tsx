@@ -1,3 +1,5 @@
+"use client";
+
 import { useLayoutEffect } from "react";
 import Link from "next/link";
 import { useLenis } from "@studio-freight/react-lenis";

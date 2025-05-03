@@ -1,4 +1,6 @@
-import { motion, Variant, VariantLabels } from "framer-motion";
+"use client";
+
+import { motion } from "framer-motion";
 
 import { cn } from "@/libs/utils";
 

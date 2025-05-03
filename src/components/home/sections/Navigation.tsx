@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { Ellipsis, X } from "lucide-react";
 
+import { formsData } from "@/data/forms";
 import { navigation } from "@/data/navigation";
 
 export const Navigation = () => {
@@ -22,7 +23,8 @@ export const Navigation = () => {
         </div>
         <motion.a
           whileHover={{ scale: 1.1 }}
-          href="https://forms.gle/wE4YkHsPvyQ8Jx6YA"
+          href={formsData.url}
+          target="_blank"
           className="cursor-pointer select-none whitespace-nowrap rounded-full bg-white p-2 px-10 text-black sm:px-8"
         >
           Join us!
@@ -57,7 +59,7 @@ export const NavigationLink = ({ href, label }: NavigationLinkProps) => {
       >
         <motion.div
           variants={NavHovervariant}
-          className="pointer-events-none absolute left-0 h-full w-full overflow-hidden bg-white text-secondary"
+          className="pointer-events-none absolute left-0 size-full overflow-hidden bg-white text-secondary"
         >
           <p className="mx-4 font-bold">{label}</p>
         </motion.div>

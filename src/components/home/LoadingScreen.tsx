@@ -44,7 +44,7 @@ export const IconLoadingScreen = ({ off }: FakeLoadingScreenProps) => {
       >
         <motion.img
           src="assets/images/UOACSLogo.svg"
-          className="absolute left-[50%] top-[50%] h-[50px] md:h-[70px]"
+          className="absolute left-1/2 top-1/2 h-[50px] md:h-[70px]"
           variants={logoVariant}
           transition={{
             duration: 0.5,
